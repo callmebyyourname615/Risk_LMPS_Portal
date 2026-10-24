@@ -1,0 +1,360 @@
+{
+  "schema": "lmps.visual-handoff.tokens.v1",
+  "metadata": {
+    "date": "2026-10-23",
+    "sourceImage": "2d3c2fd012bed58b5cc941bcc5ad45a6.jpg",
+    "sourceDimensions": {
+      "width": 736,
+      "height": 1408
+    },
+    "sourceSha256": "1c7ef1b2ec05e03983e912c59985f4ed3ad1aadb3d1a3d005c2a8aecce4646d5",
+    "classification": "sampled base surfaces; estimated visual reconstruction; proposed accessible portal adaptation",
+    "notOriginalCss": true,
+    "figmaImportFormatClaimed": false
+  },
+  "color": {
+    "bg": {
+      "canvas": {
+        "value": "#0C0C14",
+        "type": "color"
+      },
+      "sidebar": {
+        "value": "#131521",
+        "type": "color"
+      },
+      "topbar": {
+        "value": "#0D1017",
+        "type": "color"
+      },
+      "panel": {
+        "value": "#14141E",
+        "type": "color"
+      },
+      "elevated": {
+        "value": "#1B1C2A",
+        "type": "color"
+      },
+      "hover": {
+        "value": "#202233",
+        "type": "color"
+      }
+    },
+    "border": {
+      "subtle": {
+        "value": "#252636",
+        "type": "color"
+      },
+      "strong": {
+        "value": "#6C7292",
+        "type": "color"
+      }
+    },
+    "text": {
+      "primary": {
+        "value": "#F4F4F7",
+        "type": "color"
+      },
+      "secondary": {
+        "value": "#B5B6C7",
+        "type": "color"
+      },
+      "muted": {
+        "value": "#8D90A6",
+        "type": "color"
+      },
+      "inverse": {
+        "value": "#151019",
+        "type": "color"
+      }
+    },
+    "accent": {
+      "amber": {
+        "value": "#F6B73C",
+        "type": "color"
+      },
+      "cyan": {
+        "value": "#24C7DF",
+        "type": "color"
+      },
+      "violet": {
+        "value": "#AD6CFF",
+        "type": "color"
+      },
+      "pink": {
+        "value": "#EF5AA6",
+        "type": "color"
+      },
+      "green": {
+        "value": "#34D399",
+        "type": "color"
+      },
+      "blue": {
+        "value": "#5B9AFF",
+        "type": "color"
+      }
+    },
+    "dimension": {
+      "fraud": {
+        "value": "#F6B73C",
+        "type": "color"
+      },
+      "mule": {
+        "value": "#AD6CFF",
+        "type": "color"
+      },
+      "aml": {
+        "value": "#24C7DF",
+        "type": "color"
+      }
+    },
+    "severity": {
+      "critical": {
+        "value": "#FB7185",
+        "type": "color"
+      },
+      "high": {
+        "value": "#FB923C",
+        "type": "color"
+      },
+      "medium": {
+        "value": "#F6C453",
+        "type": "color"
+      },
+      "low": {
+        "value": "#34D399",
+        "type": "color"
+      },
+      "unknown": {
+        "value": "#8D90A6",
+        "type": "color"
+      }
+    },
+    "status": {
+      "success": {
+        "value": "#34D399",
+        "type": "color"
+      },
+      "warning": {
+        "value": "#F6C453",
+        "type": "color"
+      },
+      "error": {
+        "value": "#FB7185",
+        "type": "color"
+      },
+      "info": {
+        "value": "#24C7DF",
+        "type": "color"
+      },
+      "unavailable": {
+        "value": "#8D90A6",
+        "type": "color"
+      }
+    }
+  },
+  "space": {
+    "4": {
+      "value": 4,
+      "unit": "px",
+      "type": "dimension"
+    },
+    "8": {
+      "value": 8,
+      "unit": "px",
+      "type": "dimension"
+    },
+    "12": {
+      "value": 12,
+      "unit": "px",
+      "type": "dimension"
+    },
+    "16": {
+      "value": 16,
+      "unit": "px",
+      "type": "dimension"
+    },
+    "20": {
+      "value": 20,
+      "unit": "px",
+      "type": "dimension"
+    },
+    "24": {
+      "value": 24,
+      "unit": "px",
+      "type": "dimension"
+    },
+    "32": {
+      "value": 32,
+      "unit": "px",
+      "type": "dimension"
+    },
+    "40": {
+      "value": 40,
+      "unit": "px",
+      "type": "dimension"
+    },
+    "48": {
+      "value": 48,
+      "unit": "px",
+      "type": "dimension"
+    },
+    "64": {
+      "value": 64,
+      "unit": "px",
+      "type": "dimension"
+    }
+  },
+  "radius": {
+    "small": {
+      "value": 6,
+      "unit": "px",
+      "type": "dimension"
+    },
+    "control": {
+      "value": 8,
+      "unit": "px",
+      "type": "dimension"
+    },
+    "panel": {
+      "value": 12,
+      "unit": "px",
+      "type": "dimension"
+    },
+    "dialog": {
+      "value": 16,
+      "unit": "px",
+      "type": "dimension"
+    },
+    "pill": {
+      "value": 999,
+      "unit": "px",
+      "type": "dimension"
+    }
+  },
+  "layout": {
+    "referenceWidth": 1440,
+    "sidebarWidth": 264,
+    "sidebarCollapsedWidth": 80,
+    "topbarHeight": 64,
+    "pagePadding": 24,
+    "mobilePagePadding": 16,
+    "cardGap": 16,
+    "sectionGap": 24,
+    "majorSectionGap": 32,
+    "cardPadding": 20,
+    "drawerWidth": 560,
+    "summaryMinHeight": 144,
+    "chartMinHeight": 260,
+    "tableRowHeight": 48,
+    "tableCompactRowHeight": 40,
+    "tableHeaderHeight": 40,
+    "controlHeight": 40,
+    "touchTargetMin": 44,
+    "breakpoints": {
+      "phone": 768,
+      "tablet": 1024,
+      "wide": 1280
+    },
+    "units": "px",
+    "evidenceType": "proposed"
+  },
+  "font": {
+    "family": {
+      "latin": "IBM Plex Sans",
+      "lao": "Noto Sans Lao",
+      "fallback": [
+        "system-ui",
+        "sans-serif"
+      ],
+      "mono": "ui-monospace, SFMono-Regular, Menlo, monospace",
+      "sourceOriginalUnknown": true
+    },
+    "roles": {
+      "pageTitle": {
+        "size": 28,
+        "lineHeight": 36,
+        "weight": 600
+      },
+      "heroTitle": {
+        "size": 28,
+        "lineHeight": 36,
+        "weight": 700
+      },
+      "sectionTitle": {
+        "size": 16,
+        "lineHeight": 24,
+        "weight": 600
+      },
+      "panelTitle": {
+        "size": 14,
+        "lineHeight": 22,
+        "weight": 600
+      },
+      "body": {
+        "size": 14,
+        "lineHeight": 22,
+        "weight": 400
+      },
+      "meta": {
+        "size": 12,
+        "lineHeight": 18,
+        "weight": 400
+      },
+      "kpi": {
+        "size": 30,
+        "lineHeight": 38,
+        "weight": 600,
+        "tabularNumbers": true
+      },
+      "id": {
+        "size": 12,
+        "lineHeight": 20,
+        "weight": 400,
+        "monospace": true
+      }
+    },
+    "laoParagraphLineHeight": 1.65,
+    "units": "px"
+  },
+  "effect": {
+    "panelShadow": "0 8px 20px rgb(0 0 0 / .22)",
+    "popoverShadow": "0 16px 40px rgb(0 0 0 / .40)",
+    "cornerGlowViolet": "radial-gradient(ellipse at 100% 0%, rgb(173 108 255 / .18), transparent 58%)",
+    "heroGradient": "linear-gradient(105deg, #14141e 20%, #201732 100%)",
+    "spotlightGradient": "linear-gradient(145deg, #61229a 0%, #3b096c 60%, #270b4c 100%)",
+    "buttonGradient": "linear-gradient(180deg, #242638, #191b28)"
+  },
+  "motion": {
+    "fastMs": 160,
+    "drawerMs": 200,
+    "easing": "cubic-bezier(.2,.8,.2,1)",
+    "respectReducedMotion": true
+  },
+  "semanticRules": [
+    "Dimension categories are separate from severity.",
+    "Scores are not crime probabilities.",
+    "Unknown/unavailable must not become zero.",
+    "Thresholds are versioned policy inputs, never invented from design.",
+    "Mock values are visibly synthetic.",
+    "Source masking and stable account identity remain unverified."
+  ],
+  "contrast": {
+    "method": "relative luminance formula on opaque foreground/background hex",
+    "background": "#14141E",
+    "ratios": {
+      "text.primary": 16.66,
+      "text.secondary": 9.13,
+      "text.muted": 5.81,
+      "accent.amber": 10.24,
+      "accent.cyan": 8.98,
+      "accent.violet": 5.54,
+      "accent.pink": 5.82,
+      "severity.critical": 6.79,
+      "severity.high": 8.08,
+      "severity.medium": 11.27,
+      "status.success": 9.51
+    },
+    "inverseOnAmber": 10.5,
+    "scope": "Only these pairings; translucent/gradient renderings require separate verification."
+  }
+}

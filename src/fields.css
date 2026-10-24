@@ -1,0 +1,46 @@
+/* Global field treatment, based on the Alerts search field. */
+:root {
+  --color-field-surface: var(--color-bg-elevated);
+  --color-field-border: var(--color-border-strong);
+  --color-field-focus: var(--color-border-strong);
+  --color-field-ink: var(--color-text-primary);
+  --color-field-muted: var(--color-text-muted);
+  --radius-field: var(--radius-control);
+}
+.app-shell :where(input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]), select, textarea) {
+  min-height: 40px;
+  border: 1px solid var(--color-field-border);
+  border-radius: var(--radius-field);
+  background: var(--color-field-surface);
+  color: var(--color-field-ink);
+  font-family: var(--font-family);
+  font-size: 12px;
+  padding: 10px 12px;
+  outline: none;
+  box-shadow: none;
+}
+.app-shell .select-wrap select { padding: 0 34px 0 12px; border-color: var(--color-field-border); background: var(--color-field-surface); color: var(--color-field-ink); }
+.app-shell .select-wrap.compact select { min-height: 36px; border-color: var(--color-field-border); }
+.app-shell :is(.filter-search, .search-box) {
+  border: 1px solid var(--color-field-border);
+  border-radius: var(--radius-field);
+  background: var(--color-field-surface);
+  color: var(--color-field-muted);
+  box-shadow: none;
+}
+.app-shell :is(.filter-search, .search-box):focus-within { border-color: var(--color-field-border); outline: none; box-shadow: none; }
+.app-shell :is(input, select, textarea):focus { outline: none; box-shadow: none; }
+.app-shell :is(input, select, textarea):focus-visible { outline: 2px solid var(--color-field-focus); outline-offset: 2px; }
+.app-shell :is(.filter-search, .search-box) input {
+  width: 100%; min-width: 0; min-height: 0; height: auto;
+  padding: 0; border: 0; border-radius: 0;
+  background: transparent; color: var(--color-field-ink); outline: none; box-shadow: none;
+}
+.app-shell :is(.filter-search, .search-box) input:focus-visible { outline: none; }
+.app-shell :is(.filter-search, .search-box):has(input:focus-visible) { outline: 2px solid var(--color-field-focus); outline-offset: 2px; }
+.app-shell input::placeholder, .app-shell textarea::placeholder { color: var(--color-field-muted); opacity: 1; }
+.app-shell :is(input, select, textarea):disabled { cursor: not-allowed; }
+@media (max-width: 767px) {
+  .app-shell :where(input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]), select, textarea) { min-height: 44px; }
+  .app-shell :is(.filter-search, .search-box) input { min-height: 0; }
+}

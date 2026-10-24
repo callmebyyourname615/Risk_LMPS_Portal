@@ -1,0 +1,53 @@
+[
+  {
+    "date": "2026-10-23",
+    "scope": "app",
+    "routes": [
+      "/transactions",
+      "/assessments",
+      "/network (summary cards only)"
+    ],
+    "macrostructure": "Workbench",
+    "theme": "existing LMPS navy/amber",
+    "enrichment": "none",
+    "brief": "Unify records surfaces and reuse the Alerts KPI card design; preserve existing tokens, workflows and shared shell.",
+    "verification": {
+      "typecheck": "pass",
+      "logic_tests": 13,
+      "build": "pass",
+      "browser": "manual user review; no Playwright"
+    },
+    "overrides": [
+      "Keep existing hexadecimal palette and application typography as requested.",
+      "No catalog rotation or app-wide navigation redesign."
+    ]
+  },
+  {
+    "date": "2026-10-23",
+    "scope": "app",
+    "routes": [
+      "/cases",
+      "/cases/:id"
+    ],
+    "macrostructure": "Workbench",
+    "theme": "existing LMPS navy/amber",
+    "enrichment": "none",
+    "brief": "Implement the documented Cases workspace using Overview tokens and shared KPI cards; scoped GSAP entrances and reduced-motion support.",
+    "implementation": [
+      "Scoped queue and evidence detail",
+      "Assignment, append-only notes, dimension opinions, close and supervisor reopen",
+      "Atomic in-memory audit, version conflicts, idempotency and outcome invalidation"
+    ],
+    "verification": {
+      "typecheck": "pass",
+      "logic_tests": 23,
+      "build": "pass",
+      "server_render_routes": 7,
+      "browser": "manual user review; no Playwright"
+    },
+    "limitations": [
+      "Synthetic session-only workspace; no backend or production authentication",
+      "Responsive rules reviewed in code; visual browser review pending"
+    ]
+  }
+]

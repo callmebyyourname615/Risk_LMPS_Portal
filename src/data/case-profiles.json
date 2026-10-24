@@ -1,0 +1,133 @@
+{
+  "provenance": "Invented case fixture profiles copied from the user-provided New /06-prototype-fixtures.json. Missing event times remain unknown.",
+  "cases": [
+    {
+      "id": "CASE-SYN-1001",
+      "institution_id": "INST-DEMO-A",
+      "state": "in_review",
+      "revision": 3,
+      "assigned_to": "actor-analyst-a",
+      "alert_ids": [
+        "ALT-SYN-1001"
+      ],
+      "outcomes": {
+        "fraud": {
+          "opinion": null,
+          "fresh": false,
+          "review_status": "not_reviewed",
+          "verification": "unverified",
+          "training_eligible": false
+        },
+        "mule": {
+          "opinion": null,
+          "fresh": false,
+          "review_status": "not_reviewed",
+          "verification": "unverified",
+          "training_eligible": false
+        },
+        "aml": {
+          "opinion": null,
+          "fresh": false,
+          "review_status": "not_reviewed",
+          "verification": "unverified",
+          "training_eligible": false
+        }
+      },
+      "notes": [],
+      "timeline": [
+        {
+          "sequence": 1,
+          "action": "case.created",
+          "actor": "actor-analyst-a"
+        },
+        {
+          "sequence": 2,
+          "action": "case.assigned",
+          "actor": "actor-reviewer-a"
+        },
+        {
+          "sequence": 3,
+          "action": "case.in_review",
+          "actor": "actor-analyst-a"
+        }
+      ],
+      "updated_at": "2026-10-23T13:00:00+07:00"
+    },
+    {
+      "id": "CASE-SYN-1003",
+      "institution_id": "INST-DEMO-A",
+      "state": "closed",
+      "revision": 6,
+      "assigned_to": "actor-analyst-a",
+      "alert_ids": [
+        "ALT-SYN-1003"
+      ],
+      "outcomes": {
+        "fraud": {
+          "opinion": "unknown",
+          "fresh": true,
+          "review_status": "analyst_reviewed",
+          "verification": "unverified",
+          "training_eligible": false,
+          "reason": "Insufficient evidence in invented demo"
+        },
+        "mule": {
+          "opinion": "unknown",
+          "fresh": true,
+          "review_status": "analyst_reviewed",
+          "verification": "unverified",
+          "training_eligible": false,
+          "reason": "Insufficient evidence in invented demo"
+        },
+        "aml": {
+          "opinion": "unknown",
+          "fresh": true,
+          "review_status": "analyst_reviewed",
+          "verification": "unverified",
+          "training_eligible": false,
+          "reason": "Insufficient evidence in invented demo"
+        }
+      },
+      "notes": [
+        {
+          "id": "NOTE-DEMO-03",
+          "actor": "actor-analyst-a",
+          "text": "Invented demonstration: evidence is insufficient; no verified crime conclusion."
+        }
+      ],
+      "timeline": [
+        {
+          "sequence": 1,
+          "action": "case.created",
+          "actor": "actor-analyst-a"
+        },
+        {
+          "sequence": 2,
+          "action": "case.assigned",
+          "actor": "actor-reviewer-a"
+        },
+        {
+          "sequence": 3,
+          "action": "case.in_review",
+          "actor": "actor-analyst-a"
+        },
+        {
+          "sequence": 4,
+          "action": "case.note_added",
+          "actor": "actor-analyst-a"
+        },
+        {
+          "sequence": 5,
+          "action": "case.outcomes_recorded",
+          "actor": "actor-analyst-a"
+        },
+        {
+          "sequence": 6,
+          "action": "case.closed",
+          "actor": "actor-analyst-a"
+        }
+      ],
+      "updated_at": "2026-10-23T13:00:00+07:00"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+/* LMPS records tokens — aliases of the existing application design system. */
+:root {
+  --color-records-paper: var(--color-bg-canvas);
+  --color-records-panel: var(--color-bg-panel);
+  --color-records-raised: var(--color-bg-elevated);
+  --color-records-hover: var(--color-bg-hover);
+  --color-records-ink: var(--color-text-primary);
+  --color-records-secondary: var(--color-text-secondary);
+  --color-records-muted: var(--color-text-muted);
+  --color-records-rule: var(--color-border-subtle);
+  --color-records-control: var(--color-border-strong);
+  --color-records-accent: var(--color-accent-amber);
+  --color-records-focus: var(--color-accent-cyan);
+  --color-records-violet: var(--color-accent-violet);
+  --color-records-success: var(--color-accent-green);
+  --color-records-selected: color-mix(in srgb, var(--color-accent-amber) 8%, var(--color-bg-panel));
+  --color-records-selected-rule: color-mix(in srgb, var(--color-accent-amber) 28%, var(--color-bg-panel));
+  --color-records-glow: color-mix(in srgb, var(--color-accent-violet) 7%, transparent);
+  --font-records-display: var(--font-family);
+  --font-records-body: var(--font-family);
+  --font-records-mono: var(--font-family-mono);
+  --space-records-xs: var(--space-4);
+  --space-records-sm: var(--space-8);
+  --space-records-md: var(--space-12);
+  --space-records-lg: var(--space-16);
+  --space-records-panel: var(--space-20);
+  --space-records-section: var(--space-24);
+  --text-records-caption: 11px;
+  --text-records-meta: 12px;
+  --text-records-body: 13px;
+  --text-records-control: 12px;
+  --text-records-heading: 28px;
+  --radius-records-panel: var(--radius-panel);
+  --radius-records-control: var(--radius-control);
+  --ease-records-out: cubic-bezier(.16, 1, .3, 1);
+  --ease-records-in: cubic-bezier(.7, 0, .84, 0);
+  --ease-records-in-out: cubic-bezier(.65, 0, .35, 1);
+  --dur-records-micro: 120ms;
+  --dur-records-content: 220ms;
+}

@@ -1,0 +1,105 @@
+{
+  "scope": "plan documents + supplied JPEG only",
+  "recorded_date": "2026-10-23",
+  "rea_engine_used": false,
+  "reason": "ordinary planning/source analysis; no shipped binary or runtime investigation required",
+  "sources": [
+    {
+      "id": "PLAN-01-tech-stack-and-cost",
+      "path": "/Users/macbookpro/Documents/LMPS_Risk/plan/01-tech-stack-and-cost.md",
+      "sha256": "c1eaf7adbcba33627dfcbf3d9a7a91abc764dbd57c21fee39c05d001f764e515",
+      "bytes": 38206,
+      "lines": 247,
+      "evidence_type": "planning-document-not-runtime-verification"
+    },
+    {
+      "id": "PLAN-02-architecture-data-and-api",
+      "path": "/Users/macbookpro/Documents/LMPS_Risk/plan/02-architecture-data-and-api.md",
+      "sha256": "ffa376596ed36a89988cb495eea271af2bad80b2d9822b58b14eb22afb0d1e52",
+      "bytes": 51233,
+      "lines": 428,
+      "evidence_type": "planning-document-not-runtime-verification"
+    },
+    {
+      "id": "PLAN-03-implementation-phases",
+      "path": "/Users/macbookpro/Documents/LMPS_Risk/plan/03-implementation-phases.md",
+      "sha256": "2040f2c822f69de05649d74e0516cff9d3ccdd5edd85284bf30a833674c833ee",
+      "bytes": 43404,
+      "lines": 367,
+      "evidence_type": "planning-document-not-runtime-verification"
+    },
+    {
+      "id": "PLAN-04-code-session-backlog",
+      "path": "/Users/macbookpro/Documents/LMPS_Risk/plan/04-code-session-backlog.md",
+      "sha256": "6142829861fd47149e4a0113e4e8fda66441587ffee50da548eb2ff609893ddc",
+      "bytes": 27900,
+      "lines": 172,
+      "evidence_type": "planning-document-not-runtime-verification"
+    },
+    {
+      "id": "PLAN-05-evaluation-security-deployment",
+      "path": "/Users/macbookpro/Documents/LMPS_Risk/plan/05-evaluation-security-deployment.md",
+      "sha256": "ec5038774d0a512f7eed34de6be0f608c42359039a1a296fb99d918173fa3b28",
+      "bytes": 31959,
+      "lines": 272,
+      "evidence_type": "planning-document-not-runtime-verification"
+    },
+    {
+      "id": "PLAN-06-decisions-and-references",
+      "path": "/Users/macbookpro/Documents/LMPS_Risk/plan/06-decisions-and-references.md",
+      "sha256": "ca20616b1c040bd8a58741987cf44a3bc73668bdb5a8fc86291439208f1211c6",
+      "bytes": 31251,
+      "lines": 177,
+      "evidence_type": "planning-document-not-runtime-verification"
+    },
+    {
+      "id": "PLAN-07-mariadb-replica-bootstrap",
+      "path": "/Users/macbookpro/Documents/LMPS_Risk/plan/07-mariadb-replica-bootstrap.md",
+      "sha256": "2abe1b411f014718ad4dbf2e95188af72a23367a6433bab1d6413e48b5b4b94b",
+      "bytes": 17430,
+      "lines": 181,
+      "evidence_type": "planning-document-not-runtime-verification"
+    },
+    {
+      "id": "PLAN-08-postgresql-enterprise-design",
+      "path": "/Users/macbookpro/Documents/LMPS_Risk/plan/08-postgresql-enterprise-design.md",
+      "sha256": "5e415d966212c4ef96f0c12a321f14b75959ef12a7938d4e24993ad476be68d6",
+      "bytes": 53282,
+      "lines": 316,
+      "evidence_type": "planning-document-not-runtime-verification"
+    },
+    {
+      "id": "PLAN-09-missing-inputs-and-foundation-readiness",
+      "path": "/Users/macbookpro/Documents/LMPS_Risk/plan/09-missing-inputs-and-foundation-readiness.md",
+      "sha256": "7a9c296292a5c05165780a7166b3d5dd159ab486028a24fc24d90033e68b1a69",
+      "bytes": 11076,
+      "lines": 65,
+      "evidence_type": "planning-document-not-runtime-verification"
+    },
+    {
+      "id": "PLAN-10-next-implementation-steps",
+      "path": "/Users/macbookpro/Documents/LMPS_Risk/plan/10-next-implementation-steps.md",
+      "sha256": "c28c789bb720214619061c834f28c442bb14677f9f65c384eaf7538e8d92cc8a",
+      "bytes": 47057,
+      "lines": 231,
+      "evidence_type": "planning-document-not-runtime-verification"
+    },
+    {
+      "id": "PLAN-README",
+      "path": "/Users/macbookpro/Documents/LMPS_Risk/plan/README.md",
+      "sha256": "11e19e1e87c2207ff68d6a972a45c8e8979818ec3343d7a8203fd1e8ebf2b1e2",
+      "bytes": 28194,
+      "lines": 167,
+      "evidence_type": "planning-document-not-runtime-verification"
+    },
+    {
+      "id": "IMG-01",
+      "path": "/Users/macbookpro/Downloads/Inspiration_AdminPanel/2d3c2fd012bed58b5cc941bcc5ad45a6.jpg",
+      "sha256": "1c7ef1b2ec05e03983e912c59985f4ed3ad1aadb3d1a3d005c2a8aecce4646d5",
+      "bytes": 110504,
+      "width": 736,
+      "height": 1408,
+      "evidence_type": "raster-reference-not-original-design-source"
+    }
+  ]
+}

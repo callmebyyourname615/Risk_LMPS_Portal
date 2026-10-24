@@ -1,0 +1,1165 @@
+{
+  "schema_version": "1.0.0",
+  "title": "LMPS Risk Portal — proposed menu contract",
+  "analysis_date": "2026-10-23",
+  "source_boundary": "/Users/macbookpro/Documents/LMPS_Risk/plan/",
+  "output_status": "documentation_and_design_proposal_only",
+  "evidence_method": "Static analysis of supplied planning documents; implementation statuses reported by documents, not independently verified runtime/code",
+  "route_origin": "All frontend routes and menu grouping are proposed for Figma Make; plan contains explicit menu domains but no complete authoritative frontend router",
+  "groups": [
+    "Overview",
+    "Monitoring",
+    "Investigations",
+    "Detection",
+    "Data & Operations",
+    "Administration"
+  ],
+  "global_ui": {
+    "default_route": "/overview",
+    "locale_options": [
+      "lo",
+      "en"
+    ],
+    "legacy_locale_alias": "la → lo (API compatibility alias only)",
+    "timezone_display": "Asia/Vientiane for UI proposal; preserve source timezone unknown until confirmed",
+    "persistent_indicators": [
+      "Synthetic/Demo mode",
+      "Institution/case scope",
+      "As-of/freshness",
+      "Coverage",
+      "Permission state"
+    ],
+    "shared_states": [
+      "loading",
+      "empty",
+      "error",
+      "stale",
+      "partial",
+      "permission_denied",
+      "not_implemented",
+      "unavailable",
+      "conflict"
+    ]
+  },
+  "role_names_are_proposals": true,
+  "source_explicit_authorization_requirements": [
+    "Server-side institution/case/network scope",
+    "Maker/checker for high-impact policy/rule/model",
+    "Case create/link,assign,work,reopen,evidence/audit separately scoped",
+    "Actor comes from JWT/authenticated context",
+    "Generation/version CAS and idempotency"
+  ],
+  "modules": [
+    {
+      "id": "overview",
+      "group": "Overview",
+      "label": "Overview",
+      "label_th": "ภาพรวมการเฝ้าระวัง",
+      "route": "/overview",
+      "route_origin": "proposed_ux_not_source_route",
+      "phase": [
+        "P06",
+        "P10"
+      ],
+      "backend_status": "local synthetic data available in core; aggregate dashboard APIs not established",
+      "ui_status": "proposed; browser acceptance not established by plan",
+      "tabs": [
+        "Risk overview",
+        "Operational readiness"
+      ],
+      "fields": [
+        "3 risk dimensions (separate)",
+        "Alert workload",
+        "Case backlog",
+        "Data coverage",
+        "As-of/watermark",
+        "Source mode",
+        "Unavailable/degraded totals"
+      ],
+      "filters": [
+        "Date/time range",
+        "Institution scope",
+        "Currency",
+        "Execution mode",
+        "Risk dimension"
+      ],
+      "actions": [
+        "Drill into filtered transaction/alert/case lists",
+        "Refresh data",
+        "Inspect coverage and freshness"
+      ],
+      "roles_proposed": [
+        "analyst",
+        "supervisor",
+        "operator",
+        "auditor"
+      ],
+      "evidence_ids": [
+        "E08",
+        "E12",
+        "E22",
+        "E23"
+      ],
+      "limitations": [
+        "No invented production throughput, accuracy, loss prevented or 5M/day capacity KPI",
+        "No sum of multiple currencies without approved FX",
+        "27.2% is engineering progress estimate, not readiness or risk score"
+      ]
+    },
+    {
+      "id": "transactions",
+      "group": "Monitoring",
+      "label": "Transactions",
+      "label_th": "ธุรกรรมและประวัติการเปลี่ยนแปลง",
+      "route": "/transactions",
+      "route_origin": "proposed_ux_not_source_route",
+      "phase": [
+        "P02",
+        "P03",
+        "P06"
+      ],
+      "backend_status": "local synthetic revisions/read APIs and core demo reported; real canonical source mapping pending",
+      "ui_status": "proposed; browser acceptance not established by plan",
+      "tabs": [
+        "All transactions",
+        "Transaction detail",
+        "Revision history",
+        "Source lineage"
+      ],
+      "fields": [
+        "Opaque transaction/revision reference",
+        "Exact decimal amount + literal currency",
+        "Lifecycle + uncertainty",
+        "Event/observed/ingested times",
+        "Sender/receiver display attributes",
+        "Identity-resolution status",
+        "Source references",
+        "Linked assessments/alerts/cases"
+      ],
+      "filters": [
+        "Bounded date",
+        "Institution",
+        "Currency",
+        "Product/channel",
+        "Lifecycle",
+        "Mode",
+        "Transaction reference"
+      ],
+      "actions": [
+        "Open detail",
+        "Compare immutable revisions",
+        "View assessment/evidence",
+        "Bounded export (planned permission gate)"
+      ],
+      "roles_proposed": [
+        "analyst",
+        "supervisor",
+        "auditor"
+      ],
+      "evidence_ids": [
+        "E03",
+        "E04",
+        "E06",
+        "E17",
+        "E22"
+      ],
+      "limitations": [
+        "Detail route proposed /transactions/:id",
+        "Source row ID is not account or business-payment identity",
+        "Current projection and append-only events shown separately",
+        "No unbounded browser dataset export"
+      ]
+    },
+    {
+      "id": "assessments",
+      "group": "Monitoring",
+      "label": "Assessments",
+      "label_th": "ผลประเมินความเสี่ยงและหลักฐาน",
+      "route": "/assessments",
+      "route_origin": "proposed_ux_not_source_route",
+      "phase": [
+        "P05",
+        "P06",
+        "P09"
+      ],
+      "backend_status": "local synthetic 15 detectors, frozen three-dimension scores and risk jobs; pre-transfer decisions not implemented",
+      "ui_status": "proposed; browser acceptance not established by plan",
+      "tabs": [
+        "Assessment runs",
+        "Assessment detail",
+        "Evidence",
+        "Risk jobs",
+        "Decisions (future gated)"
+      ],
+      "fields": [
+        "Fraud/Mule/AML value, scale, meaning, status",
+        "Coverage and missing prerequisites",
+        "Stable reason codes",
+        "Detector/rule/model/policy versions",
+        "Feature snapshot references",
+        "Input/revision hashes",
+        "Execution mode",
+        "Job attempts/checkpoints",
+        "Recommendation vs enforcement status (future)"
+      ],
+      "filters": [
+        "Date",
+        "Institution",
+        "Dimension",
+        "Engine/policy version",
+        "Status",
+        "Mode",
+        "Job state"
+      ],
+      "actions": [
+        "Read immutable assessment",
+        "Follow reason to evidence",
+        "Inspect job attempts",
+        "Rescore as new assessment (target design; no automatic enforcement)"
+      ],
+      "roles_proposed": [
+        "analyst",
+        "supervisor",
+        "risk_author",
+        "operator",
+        "auditor"
+      ],
+      "evidence_ids": [
+        "E05",
+        "E06",
+        "E10",
+        "E19",
+        "E20",
+        "E22"
+      ],
+      "limitations": [
+        "Detail route proposed /assessments/:id; decision tab disabled with explicit integration prerequisite",
+        "Missing=null/not_available, never zero risk",
+        "0–1 indices are not probabilities",
+        "No live job enqueue/retry UI claimed: current job mutations are private CLI",
+        "No automatic Hold/Block action in monitoring portal"
+      ]
+    },
+    {
+      "id": "alerts",
+      "group": "Monitoring",
+      "label": "Alerts",
+      "label_th": "กล่องงานแจ้งเตือนความเสี่ยง",
+      "route": "/alerts",
+      "route_origin": "proposed_ux_not_source_route",
+      "phase": [
+        "P05",
+        "P06"
+      ],
+      "backend_status": "No.32 local grouped alert/review API and native acceptance No.33; real-source alert policies pending",
+      "ui_status": "proposed; browser acceptance not established by plan",
+      "tabs": [
+        "Inbox",
+        "My alerts",
+        "Alert detail",
+        "History"
+      ],
+      "fields": [
+        "Alert ID/severity/dimension",
+        "Assessment/policy references",
+        "State and revision",
+        "Assignee/owner",
+        "Created/age/as-of",
+        "Dedup group",
+        "Evidence summaries",
+        "Review opinion and reviewer",
+        "Linked case"
+      ],
+      "filters": [
+        "Open/acknowledged/reviewed",
+        "Owner",
+        "Institution",
+        "Severity",
+        "Dimension",
+        "Policy",
+        "Date",
+        "Mode"
+      ],
+      "actions": [
+        "Acknowledge with explicit durable action",
+        "Assign (target API; entitlement-aware)",
+        "Read evidence",
+        "Record suspicious/legitimate/unknown review",
+        "Create/link case without auto-review"
+      ],
+      "roles_proposed": [
+        "analyst",
+        "supervisor",
+        "auditor"
+      ],
+      "evidence_ids": [
+        "E06",
+        "E08",
+        "E19",
+        "E21"
+      ],
+      "limitations": [
+        "Detail route proposed /alerts/:id",
+        "Local flow open→acknowledged→reviewed",
+        "Alert review is unverified opinion, not mature training label",
+        "Acknowledging alert does not close a case",
+        "Case linking must respect unique ownership and revision conflicts"
+      ]
+    },
+    {
+      "id": "network",
+      "group": "Monitoring",
+      "label": "Network Explorer",
+      "label_th": "เครือข่ายบัญชีและเส้นทางเงิน",
+      "route": "/network",
+      "route_origin": "proposed_ux_not_source_route",
+      "phase": [
+        "P05",
+        "P06"
+      ],
+      "backend_status": "bounded synthetic temporal graph/path prototype only; verified account identity and graph scale pending",
+      "ui_status": "proposed; browser acceptance not established by plan",
+      "tabs": [
+        "Bounded network",
+        "Path evidence",
+        "Coverage"
+      ],
+      "fields": [
+        "Entity type and resolution",
+        "Institution/routing role",
+        "Time-ordered edges",
+        "Amount/currency/lifecycle",
+        "Source and assessment references",
+        "Node/edge/time/hops limits",
+        "Truncation and unseen network disclaimer"
+      ],
+      "filters": [
+        "Time range",
+        "Approved institution scope",
+        "Currency",
+        "Max hops",
+        "Node limit",
+        "Entity reference"
+      ],
+      "actions": [
+        "Expand bounded subgraph",
+        "Select node/edge evidence",
+        "Open linked transaction",
+        "Reset graph"
+      ],
+      "roles_proposed": [
+        "analyst_with_network_scope",
+        "supervisor_with_network_scope",
+        "auditor_with_network_scope"
+      ],
+      "evidence_ids": [
+        "E03",
+        "E05",
+        "E06",
+        "E08",
+        "E15"
+      ],
+      "limitations": [
+        "No verified account graph from masked text/HMAC/transfer.id",
+        "Partial/unresolved identity remains explicit; gate account graph/velocity when identity insufficient",
+        "No assumption internal-bank or out-of-network transfers are visible",
+        "No unbounded graph query; scope must be enforced by backend"
+      ]
+    },
+    {
+      "id": "cases",
+      "group": "Investigations",
+      "label": "Cases",
+      "label_th": "งานสอบสวนและมอบหมาย",
+      "route": "/cases",
+      "route_origin": "proposed_ux_not_source_route",
+      "phase": [
+        "P06"
+      ],
+      "backend_status": "No.37.1 backend local MVP; No.38.1 synthetic API case demo; case UI/attachments pending",
+      "ui_status": "proposed; browser acceptance not established by plan",
+      "tabs": [
+        "All cases",
+        "Assigned to me",
+        "Case detail",
+        "Evidence",
+        "Notes",
+        "Outcomes",
+        "Timeline"
+      ],
+      "fields": [
+        "Case ID/version/state",
+        "Assignee",
+        "Up to 20 linked alerts in local MVP",
+        "Frozen alert/assessment/policy/revision refs",
+        "Append-only notes/history",
+        "Per-dimension opinions",
+        "Actor and timestamps",
+        "Training eligible=false"
+      ],
+      "filters": [
+        "Open/in_review/closed",
+        "Assignee",
+        "Institution/case scope",
+        "Updated date",
+        "Dimension"
+      ],
+      "actions": [
+        "Create case",
+        "Link eligible alerts",
+        "Assign",
+        "Add note",
+        "Start review",
+        "Record separate dimension opinions",
+        "Close after required outcomes",
+        "Reopen with reason"
+      ],
+      "roles_proposed": [
+        "case_creator",
+        "case_assigner",
+        "case_worker",
+        "case_reopener",
+        "evidence_reader"
+      ],
+      "evidence_ids": [
+        "E08",
+        "E21",
+        "E22"
+      ],
+      "limitations": [
+        "Detail route proposed /cases/:id",
+        "Actual scope names not supplied in plan; role labels above are proposed UX personas",
+        "Case create/link,assign,work,reopen,evidence/audit permissions explicitly separated in plan",
+        "Version CAS + idempotency; stale updates show conflict and preserve draft",
+        "Changed assignment/evidence/reopen requires outcome re-evaluation; keep prior history",
+        "Attachments and production SOP/directory/retention are pending; show disabled capability with explanation",
+        "Case closed does not mean legitimate; case actions do not automatically acknowledge/review alert"
+      ]
+    },
+    {
+      "id": "outcomes",
+      "group": "Investigations",
+      "label": "Outcomes & Label Review",
+      "label_th": "ผลสอบสวนและการทบทวนป้ายกำกับ",
+      "route": "/outcomes",
+      "route_origin": "proposed_ux_not_source_route",
+      "phase": [
+        "P06",
+        "P08"
+      ],
+      "backend_status": "local per-dimension analyst opinions exist; adjudication/maturity/sampling/training export not implemented",
+      "ui_status": "proposed; browser acceptance not established by plan",
+      "tabs": [
+        "Case outcomes",
+        "Review queue (planned)",
+        "Adjudication (planned)",
+        "Sampling & maturity (planned)"
+      ],
+      "fields": [
+        "Dimension",
+        "Opinion/outcome code",
+        "Evidence",
+        "Reviewer",
+        "Confidence/uncertainty",
+        "Recorded/effective/mature-at time",
+        "Review status/version",
+        "Training eligibility",
+        "Sampling record"
+      ],
+      "filters": [
+        "Dimension",
+        "Reviewer",
+        "Review status",
+        "Maturity",
+        "Institution",
+        "Case",
+        "Training eligibility"
+      ],
+      "actions": [
+        "Read opinion versions",
+        "Follow case evidence",
+        "Future authorized review/adjudicate",
+        "Future controlled training export"
+      ],
+      "roles_proposed": [
+        "case_worker",
+        "label_reviewer_proposed",
+        "model_governance_proposed",
+        "auditor"
+      ],
+      "evidence_ids": [
+        "E08",
+        "E12",
+        "E21"
+      ],
+      "limitations": [
+        "Do not map local suspicious/legitimate opinions to confirmed_suspicious/confirmed_legitimate automatically",
+        "All current case outcomes analyst_reviewed/unverified, training_eligible=false",
+        "Unknown/not reviewed/no alert/case closed never auto-negative",
+        "No training export button enabled merely because case is closed"
+      ]
+    },
+    {
+      "id": "detectors",
+      "group": "Detection",
+      "label": "Detector Catalog",
+      "label_th": "กฎและตัวตรวจจับความเสี่ยง",
+      "route": "/detectors",
+      "route_origin": "proposed_ux_not_source_route",
+      "phase": [
+        "P05",
+        "P06"
+      ],
+      "backend_status": "15 bilingual synthetic detector definitions and basic immutable amount-rule versions reported",
+      "ui_status": "proposed; browser acceptance not established by plan",
+      "tabs": [
+        "Detector catalog",
+        "Detector detail",
+        "Rule versions",
+        "Backtests"
+      ],
+      "fields": [
+        "Fraud/Mule/AML family",
+        "Stable detector/reason code",
+        "Lao/English definitions",
+        "Prerequisites/limitations",
+        "Typed condition parameters",
+        "Rule version/hash",
+        "Owner",
+        "Dataset/feature version",
+        "Backtest coverage/unavailable counts"
+      ],
+      "filters": [
+        "Family",
+        "Prerequisite available",
+        "Version",
+        "Language",
+        "Status"
+      ],
+      "actions": [
+        "Read definitions/conditions/evidence",
+        "Compare versions",
+        "Draft typed rule version (target)",
+        "Run bounded offline backtest (target UI)"
+      ],
+      "roles_proposed": [
+        "analyst",
+        "risk_author",
+        "risk_approver",
+        "auditor"
+      ],
+      "evidence_ids": [
+        "E01",
+        "E05",
+        "E06",
+        "E08",
+        "E19"
+      ],
+      "limitations": [
+        "Plan states total15 detectors but does not enumerate all detector IDs; do not invent authoritative detector names",
+        "Restricted typed DSL only; no JavaScript/Python/arbitrary SQL editor",
+        "Backtest has no live alerts, push or money effects",
+        "Rule approval/production effective-date lifecycle is distinct from implemented local policy lifecycle"
+      ]
+    },
+    {
+      "id": "policies",
+      "group": "Detection",
+      "label": "Risk Policies",
+      "label_th": "เวอร์ชันนโยบายและการอนุมัติ",
+      "route": "/policies",
+      "route_origin": "proposed_ux_not_source_route",
+      "phase": [
+        "P05",
+        "P06",
+        "P09"
+      ],
+      "backend_status": "No.36.1 local immutable policy lifecycle, comparison, generation CAS activation/rollback; production governance pending",
+      "ui_status": "proposed; browser acceptance not established by plan",
+      "tabs": [
+        "Policy versions",
+        "Draft/submitted",
+        "Approvals",
+        "Comparison",
+        "Activation history"
+      ],
+      "fields": [
+        "Policy ID/hash/version",
+        "Namespace/currency scope",
+        "Creator/submitter/approver",
+        "Draft/submitted/approved/rejected",
+        "Generation",
+        "Activation binding/receipt",
+        "Frozen comparison run refs",
+        "Thresholds and coverage changes"
+      ],
+      "filters": [
+        "Status",
+        "Namespace",
+        "Currency",
+        "Creator",
+        "Approver",
+        "Version",
+        "Date"
+      ],
+      "actions": [
+        "Create draft",
+        "Submit",
+        "Approve/reject by independent actor",
+        "Compare 1–20 frozen synthetic runs",
+        "Activate/rollback local namespace binding with expected generation",
+        "Inspect job selection receipt"
+      ],
+      "roles_proposed": [
+        "risk_author",
+        "risk_approver",
+        "policy_activator_proposed",
+        "auditor"
+      ],
+      "evidence_ids": [
+        "E05",
+        "E06",
+        "E13",
+        "E21"
+      ],
+      "limitations": [
+        "Creator/submitter cannot approve own policy",
+        "Activation is local policy selection binding; does not activate live payment enforcement",
+        "Comparison advisory, not mandatory approval attestation in local MVP",
+        "Already accepted jobs keep frozen approved policy/hash/receipt after activation changes",
+        "Do not imply effective-dated production rollout exists"
+      ]
+    },
+    {
+      "id": "models",
+      "group": "Detection",
+      "label": "Evaluation & Models",
+      "label_th": "การประเมินและวงจรโมเดล",
+      "route": "/models",
+      "route_origin": "proposed_ux_not_source_route",
+      "phase": [
+        "P08"
+      ],
+      "backend_status": "target design; FastAPI diagnostics only; no trained production model/evaluation acceptance",
+      "ui_status": "proposed; browser acceptance not established by plan",
+      "tabs": [
+        "Evaluation runs",
+        "Dataset manifests",
+        "Model registry",
+        "Model health",
+        "Deployments (planned)"
+      ],
+      "fields": [
+        "Dataset/split/code/model/policy versions",
+        "Temporal availability grade",
+        "Label maturity/coverage",
+        "Fraud/Mule/AML metrics separately",
+        "Operating alert capacity",
+        "Confidence/uncertainty",
+        "Serving model/signature/readiness",
+        "Pinned deployment/version history"
+      ],
+      "filters": [
+        "Dimension",
+        "Cohort",
+        "Institution/product/currency",
+        "Model version",
+        "Dataset",
+        "Evaluation mode"
+      ],
+      "actions": [
+        "Inspect reproducible evaluation report",
+        "Compare candidates on same cohort",
+        "Read model card",
+        "Future approve/deploy/rollback after governance"
+      ],
+      "roles_proposed": [
+        "model_engineer_proposed",
+        "model_governance_proposed",
+        "operator",
+        "auditor"
+      ],
+      "evidence_ids": [
+        "E09",
+        "E12",
+        "E15"
+      ],
+      "limitations": [
+        "Unavailable metrics shown as N/A + reason; no invented accuracy95%",
+        "Synthetic labels test plumbing only",
+        "Rules/anomaly/graph can be developed without supervised labels",
+        "No claim SQL/Python graph or MLflow is deployed merely because recommended",
+        "External vendor/GNN/GPU conditional, no top-level vendor shopping menu"
+      ]
+    },
+    {
+      "id": "datasets",
+      "group": "Data & Operations",
+      "label": "Datasets & Imports",
+      "label_th": "ข้อมูลนำเข้าและการตรวจสอบความครบถ้วน",
+      "route": "/datasets",
+      "route_origin": "proposed_ux_not_source_route",
+      "phase": [
+        "P01",
+        "P03"
+      ],
+      "backend_status": "No.35.1 profiler,35.2 staging import/reconcile,35.3 threshold simulation replay local CLI reported",
+      "ui_status": "proposed; browser acceptance not established by plan",
+      "tabs": [
+        "Batches",
+        "Profile & mapping",
+        "Import checkpoints",
+        "Reconciliation",
+        "Offline replay"
+      ],
+      "fields": [
+        "Batch/manifest/hash",
+        "Candidate source table",
+        "Count/size limits",
+        "Quality unknowns",
+        "Draft mapping version",
+        "Checkpoint/attempt/resume state",
+        "Exact currency totals",
+        "Duplicate/conflict counts",
+        "Simulation policy/report refs",
+        "Privacy/access class"
+      ],
+      "filters": [
+        "Batch",
+        "Table",
+        "Stage",
+        "Status",
+        "Date",
+        "Currency"
+      ],
+      "actions": [
+        "Inspect profile/manifest",
+        "Inspect staged import checkpoints",
+        "Compare reconciliation",
+        "Read offline simulation results",
+        "Future approved upload/import controls after API contract"
+      ],
+      "roles_proposed": [
+        "data_operator_proposed",
+        "data_owner_proposed",
+        "auditor"
+      ],
+      "evidence_ids": [
+        "E03",
+        "E20",
+        "E22",
+        "E25"
+      ],
+      "limitations": [
+        "Current interface is CLI, not proven browser upload/import API",
+        "Current local per-file limit64MiB and100000 records; approximately2GB export not supported as a single file",
+        "User chose manual export→Flash drive→offline import/reconcile before sync; actual source/export path not supplied",
+        "Staging raw rows are not canonical transactions; API/app/reviewer/outbox cannot read raw staging",
+        "Offline raw-amount threshold replay is simulation; it creates no operational alert/account/graph"
+      ]
+    },
+    {
+      "id": "health",
+      "group": "Data & Operations",
+      "label": "Data & System Health",
+      "label_th": "สถานะข้อมูลและบริการ",
+      "route": "/health",
+      "route_origin": "proposed_ux_not_source_route",
+      "phase": [
+        "P02",
+        "P03",
+        "P04",
+        "P10"
+      ],
+      "backend_status": "local operations/diagnostics/sync states and backup restore reported; real CDC/stream/model and production SLO pending",
+      "ui_status": "proposed; browser acceptance not established by plan",
+      "tabs": [
+        "Service health",
+        "Data quality & coverage",
+        "Source/sync status",
+        "Features",
+        "Risk jobs",
+        "Outbox",
+        "Recovery & readiness"
+      ],
+      "fields": [
+        "Liveness vs readiness",
+        "As-of/freshness/watermarks",
+        "Unresolved/invalid/late/quarantined counts",
+        "Import vs reconciliation state",
+        "Job/lease/attempt state",
+        "Source vs downstream lag",
+        "Feature coverage/version",
+        "Backup/restore evidence refs",
+        "Gate owner/status"
+      ],
+      "filters": [
+        "Workspace/institution as authorized",
+        "Service",
+        "Pipeline stage",
+        "Date",
+        "Mode"
+      ],
+      "actions": [
+        "Refresh/inspect failure details",
+        "Read correlation reference",
+        "Open runbook/evidence",
+        "Inspect gated recovery status"
+      ],
+      "roles_proposed": [
+        "operator",
+        "data_operator_proposed",
+        "auditor"
+      ],
+      "evidence_ids": [
+        "E16",
+        "E18",
+        "E20",
+        "E22",
+        "E25"
+      ],
+      "limitations": [
+        "No connection secrets/config editor or production start/stop controls invented",
+        "Null replica lag is unknown, not zero",
+        "Readiness green does not prove real source/models/production readiness",
+        "Kafka/Flink/Valkey/PostgreSQL are status drilldowns; not separate main nav modules",
+        "5M/day remains capacity target pending measured end-to-end gate"
+      ]
+    },
+    {
+      "id": "notifications",
+      "group": "Data & Operations",
+      "label": "Notifications",
+      "label_th": "การส่งแจ้งเตือนและการรับทราบ",
+      "route": "/notifications",
+      "route_origin": "proposed_ux_not_source_route",
+      "phase": [
+        "P02",
+        "P07"
+      ],
+      "backend_status": "fake transactional outbox local foundation only; actual Web App delivery/subscription/push acceptance pending",
+      "ui_status": "proposed; browser acceptance not established by plan",
+      "tabs": [
+        "Outbox intents",
+        "Attempts",
+        "Acknowledgements",
+        "Escalation",
+        "Subscriptions (planned)"
+      ],
+      "fields": [
+        "Opaque intent/alert reference",
+        "Recipient scope",
+        "Channel/mode/policy",
+        "Queued/processing/provider_accepted/retry_scheduled/failed/expired/cancelled",
+        "Attempt lease/retry/TTL",
+        "Opened/device receipt/ack distinct",
+        "Escalation target/time"
+      ],
+      "filters": [
+        "State",
+        "Channel",
+        "Mode",
+        "Institution",
+        "Date",
+        "Alert reference"
+      ],
+      "actions": [
+        "Inspect attempt history",
+        "Follow authorized alert",
+        "Future revoke owned subscription",
+        "Future controlled retry/cancel per contract"
+      ],
+      "roles_proposed": [
+        "operator",
+        "supervisor",
+        "auditor"
+      ],
+      "evidence_ids": [
+        "E07",
+        "E09",
+        "E18"
+      ],
+      "limitations": [
+        "Do not present provider_accepted as delivered/seen/acknowledged",
+        "No real send/test-push button enabled by default",
+        "Staff recipients are candidate; not assumed account holders",
+        "No account/name/amount/raw evidence on lock screen",
+        "Web App/Add to Home Screen selected; offline/service worker/push not thereby implemented",
+        "Alert remains in inbox when notification denied/offline/expired"
+      ]
+    },
+    {
+      "id": "audit",
+      "group": "Data & Operations",
+      "label": "Audit",
+      "label_th": "ประวัติการเข้าถึงและการเปลี่ยนแปลง",
+      "route": "/audit",
+      "route_origin": "proposed_ux_not_source_route",
+      "phase": [
+        "P02",
+        "P06",
+        "P10"
+      ],
+      "backend_status": "local protected database-trigger/service audit and scoped read APIs; admin-resistant archive/WORM not established",
+      "ui_status": "proposed; browser acceptance not established by plan",
+      "tabs": [
+        "Audit events",
+        "Event detail",
+        "Access & export history (target)"
+      ],
+      "fields": [
+        "Actor type/reference",
+        "Action/target",
+        "Expected/actual revision",
+        "Reason",
+        "Time/correlation",
+        "Scope/mode",
+        "Prior/new state references",
+        "Protected archive evidence"
+      ],
+      "filters": [
+        "Date",
+        "Actor type",
+        "Action",
+        "Target",
+        "Institution/case scope",
+        "Correlation"
+      ],
+      "actions": [
+        "Read event",
+        "Navigate to authorized object/version",
+        "Bounded redacted export (planned controls)"
+      ],
+      "roles_proposed": [
+        "auditor",
+        "security_operator_proposed",
+        "case_evidence_reader"
+      ],
+      "evidence_ids": [
+        "E06",
+        "E13",
+        "E17",
+        "E21",
+        "E22"
+      ],
+      "limitations": [
+        "Database session-role actor is not employee identity by default; newer case actor from JWT shown explicitly",
+        "No edit/delete audit controls",
+        "Application append-only is not immutable to DBA",
+        "Raw payload/credentials/PII never included merely for debugging"
+      ]
+    },
+    {
+      "id": "access",
+      "group": "Administration",
+      "label": "Access & Scope",
+      "label_th": "สิทธิ์และขอบเขตการเข้าถึง",
+      "route": "/access",
+      "route_origin": "proposed_ux_not_source_route",
+      "phase": [
+        "P02",
+        "P06",
+        "P10"
+      ],
+      "backend_status": "local synthetic JWT/scoped authorization; production IdP/entitlements/revocation and directory pending",
+      "ui_status": "proposed; browser acceptance not established by plan",
+      "tabs": [
+        "My access",
+        "Role/scope matrix (proposed)",
+        "Institution mapping (proposed)",
+        "Readiness prerequisites"
+      ],
+      "fields": [
+        "Authenticated actor",
+        "Current institution/case/network scope",
+        "Action capabilities",
+        "Session state",
+        "Identity provider status",
+        "Directory evidence",
+        "Routing vs owning institution distinction"
+      ],
+      "filters": [
+        "Role/persona",
+        "Institution",
+        "Capability",
+        "Pending prerequisite"
+      ],
+      "actions": [
+        "Read own scope",
+        "Inspect role matrix",
+        "Future approved IdP-managed entitlement changes"
+      ],
+      "roles_proposed": [
+        "access_admin_proposed",
+        "security_operator_proposed",
+        "auditor"
+      ],
+      "evidence_ids": [
+        "E03",
+        "E13",
+        "E15",
+        "E18",
+        "E21"
+      ],
+      "limitations": [
+        "Role names/personas proposed, not actual entitlement literals",
+        "Never grant network-wide data because sidebar shows all institutions",
+        "Actor/scope from authenticated server context, never body override",
+        "Route guard and hidden button are UX, backend authorization still required",
+        "No create-user/reset-password capability assumed because local JWT exists"
+      ]
+    }
+  ],
+  "evidence": {
+    "E01": {
+      "file": "01-tech-stack-and-cost.md",
+      "start_line": 18,
+      "end_line": 84,
+      "claim": "Frontend baseline, 14 backend responsibilities, API/worker boundaries"
+    },
+    "E02": {
+      "file": "02-architecture-data-and-api.md",
+      "start_line": 15,
+      "end_line": 66,
+      "claim": "Three logical paths: pre-transfer, continuous monitoring, investigation/feedback"
+    },
+    "E03": {
+      "file": "02-architecture-data-and-api.md",
+      "start_line": 70,
+      "end_line": 135,
+      "claim": "Source candidates, identity unresolved, privacy zones"
+    },
+    "E04": {
+      "file": "02-architecture-data-and-api.md",
+      "start_line": 137,
+      "end_line": 182,
+      "claim": "Transaction/event/assessment/alert/case/outcome distinctions; mode/replay isolation"
+    },
+    "E05": {
+      "file": "02-architecture-data-and-api.md",
+      "start_line": 223,
+      "end_line": 292,
+      "claim": "Feature contracts, domain data model, score semantics and immutable assessments"
+    },
+    "E06": {
+      "file": "02-architecture-data-and-api.md",
+      "start_line": 294,
+      "end_line": 348,
+      "claim": "Proposed API surface; idempotency; decision/payment binding"
+    },
+    "E07": {
+      "file": "02-architecture-data-and-api.md",
+      "start_line": 350,
+      "end_line": 377,
+      "claim": "Notification outbox/attempt/acceptance/device/ack contracts"
+    },
+    "E08": {
+      "file": "03-implementation-phases.md",
+      "start_line": 173,
+      "end_line": 225,
+      "claim": "P05 detection and P06 explicit portal menus, UI states, case/label workflow"
+    },
+    "E09": {
+      "file": "03-implementation-phases.md",
+      "start_line": 227,
+      "end_line": 283,
+      "claim": "P07 user-built Web App and P08 evaluation/model requirements"
+    },
+    "E10": {
+      "file": "03-implementation-phases.md",
+      "start_line": 285,
+      "end_line": 311,
+      "claim": "P09 decision engine, authority and enforcement gates"
+    },
+    "E11": {
+      "file": "04-code-session-backlog.md",
+      "start_line": 1,
+      "end_line": 17,
+      "claim": "Newest progress summary and portal code partial status"
+    },
+    "E12": {
+      "file": "05-evaluation-security-deployment.md",
+      "start_line": 9,
+      "end_line": 72,
+      "claim": "Outcome definitions, label quality, evaluation coverage and honest metrics"
+    },
+    "E13": {
+      "file": "05-evaluation-security-deployment.md",
+      "start_line": 115,
+      "end_line": 158,
+      "claim": "Authentication, scope, audit, secrets, failure states"
+    },
+    "E14": {
+      "file": "05-evaluation-security-deployment.md",
+      "start_line": 252,
+      "end_line": 272,
+      "claim": "Scope-specific production gates and stop/rollback conditions"
+    },
+    "E15": {
+      "file": "06-decisions-and-references.md",
+      "start_line": 61,
+      "end_line": 115,
+      "claim": "Open decisions O-001–O-017; account-identity unresolved; adoption gates"
+    },
+    "E16": {
+      "file": "07-mariadb-replica-bootstrap.md",
+      "start_line": 144,
+      "end_line": 181,
+      "claim": "Replica monitoring, lag/coverage, source impact and missing setup inputs"
+    },
+    "E17": {
+      "file": "08-postgresql-enterprise-design.md",
+      "start_line": 75,
+      "end_line": 99,
+      "claim": "Target logical model for current state/history/evidence"
+    },
+    "E18": {
+      "file": "09-missing-inputs-and-foundation-readiness.md",
+      "start_line": 21,
+      "end_line": 54,
+      "claim": "Owners/SLO and source, identity, auth, labels, storage, product unknowns"
+    },
+    "E19": {
+      "file": "10-next-implementation-steps.md",
+      "start_line": 132,
+      "end_line": 168,
+      "claim": "No.30–32 synthetic rules/risk/alerts, No.33 native acceptance; portal work deferred"
+    },
+    "E20": {
+      "file": "10-next-implementation-steps.md",
+      "start_line": 171,
+      "end_line": 199,
+      "claim": "No.34 jobs and No.35.1–35.3 dataset profile/import/replay capabilities and limits"
+    },
+    "E21": {
+      "file": "10-next-implementation-steps.md",
+      "start_line": 202,
+      "end_line": 216,
+      "claim": "No.36.1 policy governance and No.37.1 cases backend local MVP"
+    },
+    "E22": {
+      "file": "10-next-implementation-steps.md",
+      "start_line": 218,
+      "end_line": 231,
+      "claim": "No.38.1 current local core demo, manual export direction and revised progress"
+    },
+    "E23": {
+      "file": "README.md",
+      "start_line": 29,
+      "end_line": 46,
+      "claim": "Confirmed business scope: fraud/mule/AML, alerts, cases, decisions, evaluation, audit"
+    },
+    "E24": {
+      "file": "README.md",
+      "start_line": 72,
+      "end_line": 129,
+      "claim": "Current architecture, Web App direction and enforcement gate"
+    },
+    "E25": {
+      "file": "03-implementation-phases.md",
+      "start_line": 87,
+      "end_line": 171,
+      "claim": "P02 auth/API/audit/outbox; P03 ingestion/reconciliation; P04 feature health"
+    }
+  }
+}

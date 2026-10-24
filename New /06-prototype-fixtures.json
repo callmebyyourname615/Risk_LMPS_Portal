@@ -1,0 +1,1072 @@
+{
+  "_meta": {
+    "purpose": "Proposed Figma prototype view model, NOT backend request payloads or database schema",
+    "provenance": "entirely_invented_synthetic_fixtures",
+    "locale": "en",
+    "supported_locales": [
+      "en",
+      "lo"
+    ],
+    "data_as_of": "2026-10-23T14:00:00+07:00",
+    "all_timestamps": "invented; timezone known only for these fixtures",
+    "environment": "synthetic-demo",
+    "real_account_identity": "unverified",
+    "training_eligible": false,
+    "scope_warning": "offline staging/replay is separate from synthetic operational chain",
+    "state_warning": "job status names and UI capability keys below are proposed view-model vocabulary unless separately cited in reports",
+    "threshold_warning": "synthetic policy examples, not approved production/legal thresholds",
+    "id_warning": "Readable UI fixture references are not valid backend UUIDs; a future API adapter must map/retrieve real opaque IDs."
+  },
+  "institutions": [
+    {
+      "id": "INST-DEMO-A",
+      "label": "Demo Institution A"
+    },
+    {
+      "id": "INST-DEMO-B",
+      "label": "Demo Institution B"
+    }
+  ],
+  "personas": [
+    {
+      "id": "actor-analyst-a",
+      "name": "Noy Analyst",
+      "role": "Analyst",
+      "institutions": [
+        "INST-DEMO-A"
+      ],
+      "capabilities": [
+        "transactions.read",
+        "assessments.read",
+        "alerts.read",
+        "alerts.ack",
+        "alerts.review",
+        "cases.read",
+        "cases.create_link",
+        "cases.work",
+        "audit.read_scoped"
+      ]
+    },
+    {
+      "id": "actor-reviewer-a",
+      "name": "Mali Reviewer",
+      "role": "Reviewer",
+      "institutions": [
+        "INST-DEMO-A"
+      ],
+      "capabilities": [
+        "alerts.read",
+        "alerts.review",
+        "cases.read",
+        "cases.assign",
+        "cases.work",
+        "cases.reopen",
+        "audit.read_scoped"
+      ]
+    },
+    {
+      "id": "actor-maker-a",
+      "name": "Vann Policy Maker",
+      "role": "Policy Maker",
+      "institutions": [
+        "INST-DEMO-A"
+      ],
+      "capabilities": [
+        "policies.read",
+        "policies.draft",
+        "policies.submit",
+        "policies.compare"
+      ]
+    },
+    {
+      "id": "actor-checker-a",
+      "name": "Kham Policy Checker",
+      "role": "Policy Checker",
+      "institutions": [
+        "INST-DEMO-A"
+      ],
+      "capabilities": [
+        "policies.read",
+        "policies.approve",
+        "policies.activate",
+        "policies.compare",
+        "audit.read_scoped"
+      ]
+    },
+    {
+      "id": "actor-operator",
+      "name": "Dao Operator",
+      "role": "Operator",
+      "institutions": [
+        "INST-DEMO-A"
+      ],
+      "capabilities": [
+        "datasets.read",
+        "datasets.demo_simulate",
+        "health.read",
+        "jobs.read"
+      ]
+    },
+    {
+      "id": "actor-auditor",
+      "name": "Anou Auditor",
+      "role": "Auditor",
+      "institutions": [
+        "INST-DEMO-A"
+      ],
+      "capabilities": [
+        "audit.read_scoped",
+        "audit.export_demo"
+      ]
+    },
+    {
+      "id": "actor-network",
+      "name": "Demo Network Supervisor",
+      "role": "Network Supervisor",
+      "institutions": [
+        "INST-DEMO-A",
+        "INST-DEMO-B"
+      ],
+      "capabilities": [
+        "transactions.read",
+        "assessments.read",
+        "alerts.read",
+        "cases.read",
+        "health.read",
+        "audit.read_scoped"
+      ]
+    }
+  ],
+  "policies": [
+    {
+      "id": "POL-SYN-03",
+      "version": 3,
+      "state": "approved",
+      "immutable": true,
+      "namespace": "synthetic-demo",
+      "currency": "SYN",
+      "created_by": "actor-maker-a",
+      "submitted_by": "actor-maker-a",
+      "approved_by": "actor-checker-a",
+      "hash": "DEMO-POLICY-HASH-03",
+      "comparison_advisory": true,
+      "effective_date_scheduling": "not_implemented",
+      "production_approved": false
+    },
+    {
+      "id": "POL-SYN-04",
+      "version": 4,
+      "state": "submitted",
+      "immutable": true,
+      "namespace": "synthetic-demo",
+      "currency": "SYN",
+      "created_by": "actor-maker-a",
+      "submitted_by": "actor-maker-a",
+      "approved_by": null,
+      "hash": "DEMO-POLICY-HASH-04",
+      "comparison_advisory": true,
+      "production_approved": false
+    },
+    {
+      "id": "POL-SYN-05",
+      "version": 5,
+      "state": "draft",
+      "immutable": true,
+      "namespace": "synthetic-demo",
+      "currency": "SYN",
+      "created_by": "actor-maker-a",
+      "submitted_by": null,
+      "approved_by": null,
+      "hash": "DEMO-POLICY-HASH-05",
+      "comparison_advisory": true,
+      "production_approved": false
+    }
+  ],
+  "policy_bindings": [
+    {
+      "namespace": "synthetic-demo",
+      "currency": "SYN",
+      "generation": 3,
+      "policy_id": "POL-SYN-03",
+      "selection_receipt": "DEMO-RECEIPT-03"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "TX-SYN-1001",
+      "revision": 2,
+      "institution_id": "INST-DEMO-A",
+      "occurred_at": "2026-10-23T09:00:00+07:00",
+      "observed_at": "2026-10-23T09:00:00+07:00",
+      "recorded_at": "2026-10-23T09:00:00+07:00",
+      "timezone_confidence": "known_for_fixture_only",
+      "amount": "1250000.00",
+      "currency": "SYN",
+      "lifecycle": "completed",
+      "source_ref": "DEMO-SOURCE-1001",
+      "source": "synthetic_snapshot",
+      "sender_display": "Invented ref A-1001",
+      "receiver_display": "Invented ref B-1001",
+      "account_identity": "unresolved",
+      "assessment_id": "ASM-SYN-1001"
+    },
+    {
+      "id": "TX-SYN-1002",
+      "revision": 1,
+      "institution_id": "INST-DEMO-A",
+      "occurred_at": "2026-10-23T10:00:00+07:00",
+      "observed_at": "2026-10-23T10:00:00+07:00",
+      "recorded_at": "2026-10-23T10:00:00+07:00",
+      "timezone_confidence": "known_for_fixture_only",
+      "amount": "40000.00",
+      "currency": "SYN",
+      "lifecycle": "completed",
+      "source_ref": "DEMO-SOURCE-1002",
+      "source": "synthetic_snapshot",
+      "sender_display": "Invented ref A-1002",
+      "receiver_display": "Invented ref B-1002",
+      "account_identity": "unresolved",
+      "assessment_id": "ASM-SYN-1002"
+    },
+    {
+      "id": "TX-SYN-1003",
+      "revision": 1,
+      "institution_id": "INST-DEMO-A",
+      "occurred_at": "2026-10-22T11:00:00+07:00",
+      "observed_at": "2026-10-22T11:00:00+07:00",
+      "recorded_at": "2026-10-22T11:00:00+07:00",
+      "timezone_confidence": "known_for_fixture_only",
+      "amount": "220000.00",
+      "currency": "SYN",
+      "lifecycle": "completed",
+      "source_ref": "DEMO-SOURCE-1003",
+      "source": "synthetic_snapshot",
+      "sender_display": "Invented ref A-1003",
+      "receiver_display": "Invented ref B-1003",
+      "account_identity": "unresolved",
+      "assessment_id": "ASM-SYN-1003"
+    },
+    {
+      "id": "TX-SYN-1004",
+      "revision": 1,
+      "institution_id": "INST-DEMO-B",
+      "occurred_at": "2026-10-22T12:00:00+07:00",
+      "observed_at": "2026-10-22T12:00:00+07:00",
+      "recorded_at": "2026-10-22T12:00:00+07:00",
+      "timezone_confidence": "known_for_fixture_only",
+      "amount": "90000.00",
+      "currency": "SYN",
+      "lifecycle": "completed",
+      "source_ref": "DEMO-SOURCE-1004",
+      "source": "synthetic_snapshot",
+      "sender_display": "Invented ref A-1004",
+      "receiver_display": "Invented ref B-1004",
+      "account_identity": "unresolved",
+      "assessment_id": "ASM-SYN-1004"
+    },
+    {
+      "id": "TX-SYN-1005",
+      "revision": 1,
+      "institution_id": "INST-DEMO-A",
+      "occurred_at": "2026-10-21T13:00:00+07:00",
+      "observed_at": "2026-10-21T13:00:00+07:00",
+      "recorded_at": "2026-10-21T13:00:00+07:00",
+      "timezone_confidence": "known_for_fixture_only",
+      "amount": "120.00",
+      "currency": "USD",
+      "lifecycle": "completed",
+      "source_ref": "DEMO-SOURCE-1005",
+      "source": "synthetic_snapshot",
+      "sender_display": "Invented ref A-1005",
+      "receiver_display": "Invented ref B-1005",
+      "account_identity": "unresolved",
+      "assessment_id": null
+    },
+    {
+      "id": "TX-SYN-1006",
+      "revision": 1,
+      "institution_id": "INST-DEMO-B",
+      "occurred_at": "2026-10-21T14:00:00+07:00",
+      "observed_at": "2026-10-21T14:00:00+07:00",
+      "recorded_at": "2026-10-21T14:00:00+07:00",
+      "timezone_confidence": "known_for_fixture_only",
+      "amount": "2000.00",
+      "currency": "THB",
+      "lifecycle": "completed",
+      "source_ref": "DEMO-SOURCE-1006",
+      "source": "synthetic_snapshot",
+      "sender_display": "Invented ref A-1006",
+      "receiver_display": "Invented ref B-1006",
+      "account_identity": "unresolved",
+      "assessment_id": null
+    },
+    {
+      "id": "TX-SYN-1007",
+      "revision": 1,
+      "institution_id": "INST-DEMO-A",
+      "occurred_at": "2026-10-23T11:00:00+07:00",
+      "observed_at": "2026-10-23T11:00:00+07:00",
+      "recorded_at": "2026-10-23T11:00:00+07:00",
+      "timezone_confidence": "known_for_fixture_only",
+      "amount": "40000.00",
+      "currency": "SYN",
+      "lifecycle": "completed",
+      "source_ref": "DEMO-SOURCE-1007",
+      "source": "synthetic_snapshot",
+      "sender_display": "Invented ref A-1007",
+      "receiver_display": "Invented ref B-1007",
+      "account_identity": "unresolved",
+      "assessment_id": "ASM-SYN-1007"
+    }
+  ],
+  "assessments": [
+    {
+      "id": "ASM-SYN-1001",
+      "transaction_id": "TX-SYN-1001",
+      "revision": 2,
+      "institution_id": "INST-DEMO-A",
+      "mode": "synthetic",
+      "policy_id": "POL-SYN-03",
+      "engine_version": "DEMO-ENGINE-01",
+      "catalog_version": "DEMO-CATALOG-01",
+      "input_fingerprint": "DEMO-INPUT-1001",
+      "dimensions": {
+        "fraud": {
+          "index": 0.84,
+          "status": "available",
+          "coverage": {
+            "available": 4,
+            "required": 4
+          }
+        },
+        "mule": {
+          "index": null,
+          "status": "unavailable",
+          "coverage": {
+            "available": 0,
+            "required": 3
+          },
+          "reason": "unresolved_identity"
+        },
+        "aml": {
+          "index": 0.62,
+          "status": "available",
+          "coverage": {
+            "available": 3,
+            "required": 3
+          }
+        }
+      },
+      "reason_codes": [
+        "DEMO_AMOUNT_SIGNAL",
+        "DEMO_IDENTITY_UNRESOLVED"
+      ],
+      "reasons_are": "illustrative_not_verified_catalog_codes",
+      "created_at": "2026-10-23T09:00:00+07:00"
+    },
+    {
+      "id": "ASM-SYN-1002",
+      "transaction_id": "TX-SYN-1002",
+      "revision": 1,
+      "institution_id": "INST-DEMO-A",
+      "mode": "synthetic",
+      "policy_id": "POL-SYN-03",
+      "engine_version": "DEMO-ENGINE-01",
+      "catalog_version": "DEMO-CATALOG-01",
+      "input_fingerprint": "DEMO-INPUT-1002",
+      "dimensions": {
+        "fraud": {
+          "index": 0.55,
+          "status": "available",
+          "coverage": {
+            "available": 4,
+            "required": 4
+          }
+        },
+        "mule": {
+          "index": null,
+          "status": "unavailable",
+          "coverage": {
+            "available": 0,
+            "required": 3
+          },
+          "reason": "unresolved_identity"
+        },
+        "aml": {
+          "index": 0.3,
+          "status": "available",
+          "coverage": {
+            "available": 3,
+            "required": 3
+          }
+        }
+      },
+      "reason_codes": [
+        "DEMO_AMOUNT_SIGNAL",
+        "DEMO_IDENTITY_UNRESOLVED"
+      ],
+      "reasons_are": "illustrative_not_verified_catalog_codes",
+      "created_at": "2026-10-23T10:00:00+07:00"
+    },
+    {
+      "id": "ASM-SYN-1003",
+      "transaction_id": "TX-SYN-1003",
+      "revision": 1,
+      "institution_id": "INST-DEMO-A",
+      "mode": "synthetic",
+      "policy_id": "POL-SYN-03",
+      "engine_version": "DEMO-ENGINE-01",
+      "catalog_version": "DEMO-CATALOG-01",
+      "input_fingerprint": "DEMO-INPUT-1003",
+      "dimensions": {
+        "fraud": {
+          "index": 0.77,
+          "status": "available",
+          "coverage": {
+            "available": 4,
+            "required": 4
+          }
+        },
+        "mule": {
+          "index": null,
+          "status": "unavailable",
+          "coverage": {
+            "available": 0,
+            "required": 3
+          },
+          "reason": "unresolved_identity"
+        },
+        "aml": {
+          "index": 0.66,
+          "status": "available",
+          "coverage": {
+            "available": 3,
+            "required": 3
+          }
+        }
+      },
+      "reason_codes": [
+        "DEMO_AMOUNT_SIGNAL",
+        "DEMO_IDENTITY_UNRESOLVED"
+      ],
+      "reasons_are": "illustrative_not_verified_catalog_codes",
+      "created_at": "2026-10-22T11:00:00+07:00"
+    },
+    {
+      "id": "ASM-SYN-1004",
+      "transaction_id": "TX-SYN-1004",
+      "revision": 1,
+      "institution_id": "INST-DEMO-B",
+      "mode": "synthetic",
+      "policy_id": "POL-SYN-03",
+      "engine_version": "DEMO-ENGINE-01",
+      "catalog_version": "DEMO-CATALOG-01",
+      "input_fingerprint": "DEMO-INPUT-1004",
+      "dimensions": {
+        "fraud": {
+          "index": 0.31,
+          "status": "available",
+          "coverage": {
+            "available": 4,
+            "required": 4
+          }
+        },
+        "mule": {
+          "index": null,
+          "status": "unavailable",
+          "coverage": {
+            "available": 0,
+            "required": 3
+          },
+          "reason": "unresolved_identity"
+        },
+        "aml": {
+          "index": 0.18,
+          "status": "available",
+          "coverage": {
+            "available": 3,
+            "required": 3
+          }
+        }
+      },
+      "reason_codes": [
+        "DEMO_AMOUNT_SIGNAL",
+        "DEMO_IDENTITY_UNRESOLVED"
+      ],
+      "reasons_are": "illustrative_not_verified_catalog_codes",
+      "created_at": "2026-10-22T12:00:00+07:00"
+    },
+    {
+      "id": "ASM-SYN-1007",
+      "transaction_id": "TX-SYN-1007",
+      "revision": 1,
+      "institution_id": "INST-DEMO-A",
+      "mode": "synthetic",
+      "policy_id": "POL-SYN-03",
+      "engine_version": "DEMO-ENGINE-01",
+      "catalog_version": "DEMO-CATALOG-01",
+      "input_fingerprint": "DEMO-INPUT-1007",
+      "dimensions": {
+        "fraud": {
+          "index": 0.55,
+          "status": "available",
+          "coverage": {
+            "available": 4,
+            "required": 4
+          }
+        },
+        "mule": {
+          "index": null,
+          "status": "unavailable",
+          "coverage": {
+            "available": 0,
+            "required": 3
+          },
+          "reason": "unresolved_identity"
+        },
+        "aml": {
+          "index": 0.3,
+          "status": "available",
+          "coverage": {
+            "available": 3,
+            "required": 3
+          }
+        }
+      },
+      "reason_codes": [
+        "DEMO_AMOUNT_SIGNAL",
+        "DEMO_IDENTITY_UNRESOLVED"
+      ],
+      "reasons_are": "illustrative_not_verified_catalog_codes",
+      "created_at": "2026-10-23T11:00:00+07:00"
+    }
+  ],
+  "alerts": [
+    {
+      "id": "ALT-SYN-1001",
+      "institution_id": "INST-DEMO-A",
+      "assessment_id": "ASM-SYN-1001",
+      "transaction_id": "TX-SYN-1001",
+      "policy_id": "POL-SYN-03",
+      "state": "open",
+      "severity": "high",
+      "dimensions": [
+        "fraud",
+        "aml"
+      ],
+      "case_id": "CASE-SYN-1001",
+      "created_at": "2026-10-23T09:00:00+07:00",
+      "updated_at": "2026-10-23T09:00:00+07:00",
+      "review": null
+    },
+    {
+      "id": "ALT-SYN-1002",
+      "institution_id": "INST-DEMO-A",
+      "assessment_id": "ASM-SYN-1002",
+      "transaction_id": "TX-SYN-1002",
+      "policy_id": "POL-SYN-03",
+      "state": "acknowledged",
+      "severity": "medium",
+      "dimensions": [
+        "fraud",
+        "aml"
+      ],
+      "case_id": null,
+      "created_at": "2026-10-23T10:00:00+07:00",
+      "updated_at": "2026-10-23T10:00:00+07:00",
+      "review": null
+    },
+    {
+      "id": "ALT-SYN-1003",
+      "institution_id": "INST-DEMO-A",
+      "assessment_id": "ASM-SYN-1003",
+      "transaction_id": "TX-SYN-1003",
+      "policy_id": "POL-SYN-03",
+      "state": "reviewed",
+      "severity": "high",
+      "dimensions": [
+        "fraud",
+        "aml"
+      ],
+      "case_id": "CASE-SYN-1003",
+      "created_at": "2026-10-22T11:00:00+07:00",
+      "updated_at": "2026-10-22T11:00:00+07:00",
+      "review": {
+        "opinion": "unknown",
+        "status": "analyst_reviewed",
+        "verification": "unverified",
+        "training_eligible": false
+      }
+    },
+    {
+      "id": "ALT-SYN-1007",
+      "institution_id": "INST-DEMO-A",
+      "assessment_id": "ASM-SYN-1007",
+      "transaction_id": "TX-SYN-1007",
+      "policy_id": "POL-SYN-03",
+      "state": "open",
+      "severity": "medium",
+      "dimensions": [
+        "fraud",
+        "aml"
+      ],
+      "case_id": null,
+      "created_at": "2026-10-23T11:00:00+07:00",
+      "updated_at": "2026-10-23T11:00:00+07:00",
+      "review": null
+    }
+  ],
+  "cases": [
+    {
+      "id": "CASE-SYN-1001",
+      "institution_id": "INST-DEMO-A",
+      "state": "in_review",
+      "revision": 3,
+      "assigned_to": "actor-analyst-a",
+      "alert_ids": [
+        "ALT-SYN-1001"
+      ],
+      "outcomes": {
+        "fraud": {
+          "opinion": null,
+          "fresh": false,
+          "review_status": "not_reviewed",
+          "verification": "unverified",
+          "training_eligible": false
+        },
+        "mule": {
+          "opinion": null,
+          "fresh": false,
+          "review_status": "not_reviewed",
+          "verification": "unverified",
+          "training_eligible": false
+        },
+        "aml": {
+          "opinion": null,
+          "fresh": false,
+          "review_status": "not_reviewed",
+          "verification": "unverified",
+          "training_eligible": false
+        }
+      },
+      "notes": [],
+      "timeline": [
+        {
+          "sequence": 1,
+          "action": "case.created",
+          "actor": "actor-analyst-a"
+        },
+        {
+          "sequence": 2,
+          "action": "case.assigned",
+          "actor": "actor-reviewer-a"
+        },
+        {
+          "sequence": 3,
+          "action": "case.in_review",
+          "actor": "actor-analyst-a"
+        }
+      ],
+      "updated_at": "2026-10-23T13:00:00+07:00"
+    },
+    {
+      "id": "CASE-SYN-1003",
+      "institution_id": "INST-DEMO-A",
+      "state": "closed",
+      "revision": 6,
+      "assigned_to": "actor-analyst-a",
+      "alert_ids": [
+        "ALT-SYN-1003"
+      ],
+      "outcomes": {
+        "fraud": {
+          "opinion": "unknown",
+          "fresh": true,
+          "review_status": "analyst_reviewed",
+          "verification": "unverified",
+          "training_eligible": false,
+          "reason": "Insufficient evidence in invented demo"
+        },
+        "mule": {
+          "opinion": "unknown",
+          "fresh": true,
+          "review_status": "analyst_reviewed",
+          "verification": "unverified",
+          "training_eligible": false,
+          "reason": "Insufficient evidence in invented demo"
+        },
+        "aml": {
+          "opinion": "unknown",
+          "fresh": true,
+          "review_status": "analyst_reviewed",
+          "verification": "unverified",
+          "training_eligible": false,
+          "reason": "Insufficient evidence in invented demo"
+        }
+      },
+      "notes": [
+        {
+          "id": "NOTE-DEMO-03",
+          "actor": "actor-analyst-a",
+          "text": "Invented demonstration: evidence is insufficient; no verified crime conclusion."
+        }
+      ],
+      "timeline": [
+        {
+          "sequence": 1,
+          "action": "case.created",
+          "actor": "actor-analyst-a"
+        },
+        {
+          "sequence": 2,
+          "action": "case.assigned",
+          "actor": "actor-reviewer-a"
+        },
+        {
+          "sequence": 3,
+          "action": "case.in_review",
+          "actor": "actor-analyst-a"
+        },
+        {
+          "sequence": 4,
+          "action": "case.note_added",
+          "actor": "actor-analyst-a"
+        },
+        {
+          "sequence": 5,
+          "action": "case.outcomes_recorded",
+          "actor": "actor-analyst-a"
+        },
+        {
+          "sequence": 6,
+          "action": "case.closed",
+          "actor": "actor-analyst-a"
+        }
+      ],
+      "updated_at": "2026-10-23T13:00:00+07:00"
+    }
+  ],
+  "risk_jobs": [
+    {
+      "id": "JOB-SYN-1001",
+      "transaction_id": "TX-SYN-1001",
+      "assessment_id": "ASM-SYN-1001",
+      "institution_id": "INST-DEMO-A",
+      "state": "completed_demo",
+      "state_vocabulary": "proposed_UI_only",
+      "policy_id_frozen": "POL-SYN-03",
+      "policy_hash_frozen": "DEMO-POLICY-HASH-03",
+      "selection_receipt": "DEMO-RECEIPT-03",
+      "attempt": 1,
+      "read_only_in_portal": true
+    },
+    {
+      "id": "JOB-SYN-1002",
+      "transaction_id": "TX-SYN-1002",
+      "assessment_id": "ASM-SYN-1002",
+      "institution_id": "INST-DEMO-A",
+      "state": "completed_demo",
+      "state_vocabulary": "proposed_UI_only",
+      "policy_id_frozen": "POL-SYN-03",
+      "policy_hash_frozen": "DEMO-POLICY-HASH-03",
+      "selection_receipt": "DEMO-RECEIPT-03",
+      "attempt": 1,
+      "read_only_in_portal": true
+    },
+    {
+      "id": "JOB-SYN-1003",
+      "transaction_id": "TX-SYN-1003",
+      "assessment_id": "ASM-SYN-1003",
+      "institution_id": "INST-DEMO-A",
+      "state": "completed_demo",
+      "state_vocabulary": "proposed_UI_only",
+      "policy_id_frozen": "POL-SYN-03",
+      "policy_hash_frozen": "DEMO-POLICY-HASH-03",
+      "selection_receipt": "DEMO-RECEIPT-03",
+      "attempt": 1,
+      "read_only_in_portal": true
+    },
+    {
+      "id": "JOB-SYN-1004",
+      "transaction_id": "TX-SYN-1004",
+      "assessment_id": "ASM-SYN-1004",
+      "institution_id": "INST-DEMO-B",
+      "state": "completed_demo",
+      "state_vocabulary": "proposed_UI_only",
+      "policy_id_frozen": "POL-SYN-03",
+      "policy_hash_frozen": "DEMO-POLICY-HASH-03",
+      "selection_receipt": "DEMO-RECEIPT-03",
+      "attempt": 1,
+      "read_only_in_portal": true
+    },
+    {
+      "id": "JOB-SYN-1007",
+      "transaction_id": "TX-SYN-1007",
+      "assessment_id": "ASM-SYN-1007",
+      "institution_id": "INST-DEMO-A",
+      "state": "completed_demo",
+      "state_vocabulary": "proposed_UI_only",
+      "policy_id_frozen": "POL-SYN-03",
+      "policy_hash_frozen": "DEMO-POLICY-HASH-03",
+      "selection_receipt": "DEMO-RECEIPT-03",
+      "attempt": 1,
+      "read_only_in_portal": true
+    }
+  ],
+  "offline_batches": [
+    {
+      "id": "BATCH-OFF-001",
+      "provenance": "offline_staging_demo",
+      "source_table": "transfer",
+      "file_size_bytes": 18000,
+      "row_count": 12,
+      "schema_profile": "illustrative",
+      "import_state": "complete",
+      "reconciled": true,
+      "checkpoint_size": 500,
+      "manifest_fingerprint": "DEMO-BATCH-FINGERPRINT-001",
+      "literal_currency": "LAK",
+      "account_identity": "unverified",
+      "canonical_transactions_created": 0
+    }
+  ],
+  "offline_replays": [
+    {
+      "id": "REPLAY-OFF-001",
+      "batch_id": "BATCH-OFF-001",
+      "mode": "raw_amount_simulation",
+      "synthetic_policy": {
+        "currency": "LAK",
+        "amount_threshold": "1000000.00"
+      },
+      "results": [
+        {
+          "row_ref": "opaque-row-01",
+          "result": "matched"
+        },
+        {
+          "row_ref": "opaque-row-02",
+          "result": "not_matched"
+        },
+        {
+          "row_ref": "opaque-row-03",
+          "result": "unavailable",
+          "reason": "unconfigured_currency"
+        }
+      ],
+      "operational_alerts_created": 0,
+      "canonical_transactions_created": 0,
+      "semantics_warning": "no lifecycle/reversal/timezone/account interpretation; not_matched does not imply safe"
+    }
+  ],
+  "network_demo": {
+    "provenance": "invented_unverified_nodes",
+    "account_identity_verified": false,
+    "max_hops": 2,
+    "max_nodes": 10,
+    "coverage": "partial",
+    "truncated": true,
+    "nodes": [
+      {
+        "id": "NODE-DEMO-01",
+        "label": "Invented reference 01",
+        "identity_status": "unresolved"
+      },
+      {
+        "id": "NODE-DEMO-02",
+        "label": "Invented reference 02",
+        "identity_status": "unresolved"
+      },
+      {
+        "id": "NODE-DEMO-03",
+        "label": "Invented reference 03",
+        "identity_status": "unresolved"
+      }
+    ],
+    "edges": [
+      {
+        "source": "NODE-DEMO-01",
+        "target": "NODE-DEMO-02",
+        "transaction_id": "TX-SYN-1001",
+        "currency": "SYN",
+        "amount": "1250000.00",
+        "occurred_at": "2026-10-23T09:00:00+07:00"
+      },
+      {
+        "source": "NODE-DEMO-02",
+        "target": "NODE-DEMO-03",
+        "transaction_id": "TX-SYN-1002",
+        "currency": "SYN",
+        "amount": "40000.00",
+        "occurred_at": "2026-10-23T10:00:00+07:00"
+      }
+    ]
+  },
+  "planned_modules": {
+    "model_metrics": {
+      "precision": null,
+      "recall": null,
+      "pr_auc": null,
+      "population_fpr": null,
+      "reason": "eligible labels / temporal evaluation not available"
+    },
+    "notification_delivery": {
+      "state": "not_connected",
+      "provider_accepted": null,
+      "device_receipt": null,
+      "opened": null,
+      "acknowledged": null,
+      "preview": "A risk alert requires your review · DEMO-REF-001"
+    },
+    "decision_integration": {
+      "state": "planned",
+      "enforcement_available": false
+    },
+    "label_adjudication": {
+      "state": "planned",
+      "training_export_available": false
+    }
+  },
+  "prototype_constraints": {
+    "file_max_bytes": 67108864,
+    "file_max_records": 100000,
+    "import_checkpoint_rows": 500,
+    "case_max_alerts": 20,
+    "policy_comparison_min_runs": 1,
+    "policy_comparison_max_runs": 20,
+    "attachments_available": false,
+    "real_connections_available": false,
+    "job_http_mutations_available": false,
+    "policy_self_approval_allowed": false
+  },
+  "audit_events": [
+    {
+      "id": "AUD-CASE-SYN-1001-1",
+      "target": "CASE-SYN-1001",
+      "institution_id": "INST-DEMO-A",
+      "action": "case.created",
+      "actor": "actor-analyst-a",
+      "revision": 1,
+      "correlation_id": "CORR-DEMO-CASE-SYN-1001-1",
+      "timestamp": "2026-10-23T13:00:00+07:00",
+      "provenance": "invented_demo"
+    },
+    {
+      "id": "AUD-CASE-SYN-1001-2",
+      "target": "CASE-SYN-1001",
+      "institution_id": "INST-DEMO-A",
+      "action": "case.assigned",
+      "actor": "actor-reviewer-a",
+      "revision": 2,
+      "correlation_id": "CORR-DEMO-CASE-SYN-1001-2",
+      "timestamp": "2026-10-23T13:00:00+07:00",
+      "provenance": "invented_demo"
+    },
+    {
+      "id": "AUD-CASE-SYN-1003-1",
+      "target": "CASE-SYN-1003",
+      "institution_id": "INST-DEMO-A",
+      "action": "case.created",
+      "actor": "actor-analyst-a",
+      "revision": 1,
+      "correlation_id": "CORR-DEMO-CASE-SYN-1003-1",
+      "timestamp": "2026-10-23T13:00:00+07:00",
+      "provenance": "invented_demo"
+    },
+    {
+      "id": "AUD-CASE-SYN-1003-2",
+      "target": "CASE-SYN-1003",
+      "institution_id": "INST-DEMO-A",
+      "action": "case.assigned",
+      "actor": "actor-reviewer-a",
+      "revision": 2,
+      "correlation_id": "CORR-DEMO-CASE-SYN-1003-2",
+      "timestamp": "2026-10-23T13:00:00+07:00",
+      "provenance": "invented_demo"
+    },
+    {
+      "id": "AUD-CASE-SYN-1003-3",
+      "target": "CASE-SYN-1003",
+      "institution_id": "INST-DEMO-A",
+      "action": "case.in_review",
+      "actor": "actor-analyst-a",
+      "revision": 3,
+      "correlation_id": "CORR-DEMO-CASE-SYN-1003-3",
+      "timestamp": "2026-10-23T13:00:00+07:00",
+      "provenance": "invented_demo"
+    },
+    {
+      "id": "AUD-CASE-SYN-1003-4",
+      "target": "CASE-SYN-1003",
+      "institution_id": "INST-DEMO-A",
+      "action": "case.note_added",
+      "actor": "actor-analyst-a",
+      "revision": 4,
+      "correlation_id": "CORR-DEMO-CASE-SYN-1003-4",
+      "timestamp": "2026-10-23T13:00:00+07:00",
+      "provenance": "invented_demo"
+    },
+    {
+      "id": "AUD-CASE-SYN-1003-5",
+      "target": "CASE-SYN-1003",
+      "institution_id": "INST-DEMO-A",
+      "action": "case.outcomes_recorded",
+      "actor": "actor-analyst-a",
+      "revision": 5,
+      "correlation_id": "CORR-DEMO-CASE-SYN-1003-5",
+      "timestamp": "2026-10-23T13:00:00+07:00",
+      "provenance": "invented_demo"
+    },
+    {
+      "id": "AUD-CASE-SYN-1003-6",
+      "target": "CASE-SYN-1003",
+      "institution_id": "INST-DEMO-A",
+      "action": "case.closed",
+      "actor": "actor-analyst-a",
+      "revision": 6,
+      "correlation_id": "CORR-DEMO-CASE-SYN-1003-6",
+      "timestamp": "2026-10-23T13:00:00+07:00",
+      "provenance": "invented_demo"
+    },
+    {
+      "id": "AUD-CASE-SYN-1001-3",
+      "target": "CASE-SYN-1001",
+      "institution_id": "INST-DEMO-A",
+      "action": "case.in_review",
+      "actor": "actor-analyst-a",
+      "revision": 3,
+      "correlation_id": "CORR-DEMO-CASE-SYN-1001-3",
+      "timestamp": "2026-10-23T13:00:00+07:00",
+      "provenance": "invented_demo"
+    }
+  ],
+  "qa_scenarios": [
+    "loading",
+    "empty",
+    "no_filter_results",
+    "recoverable_error",
+    "stale",
+    "partial_coverage",
+    "permission_denied",
+    "case_version_conflict",
+    "policy_generation_conflict",
+    "self_approval_rejected",
+    "alert_already_owned",
+    "outcome_stale_after_reassignment",
+    "audit_failure_rolls_back",
+    "dataset_2gb_rejected",
+    "unknown_not_legitimate"
+  ],
+  "ui_derived_metrics_contract": {
+    "date_basis": "transaction occurred_at; alert created_at; case updated_at (proposal)",
+    "transactions": "count scoped transactions in selected interval",
+    "open_alerts": "count scoped alerts with state=open in selected interval",
+    "active_cases": "count scoped cases in open/in_review with updated_at in interval",
+    "assessment_coverage": "assessed transaction count / scoped transaction count; not detector-input coverage",
+    "dimension_input_coverage": "sum available inputs / sum required inputs per assessment, shown separately",
+    "reviewed_alert_ratio": "reviewed scoped alerts / all scoped alerts in selected interval",
+    "risk_dimension_bars": "count alert dimension memberships; overlapping categories explicitly labeled",
+    "currency_totals": "group by literal currency only; exact decimal arithmetic; no cross-currency sum",
+    "empty_denominator": "unavailable, not0%"
+  }
+}

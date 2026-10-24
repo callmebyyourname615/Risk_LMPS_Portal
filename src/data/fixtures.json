@@ -1,0 +1,458 @@
+{
+  "_meta": {
+    "data_as_of": "2026-10-23T14:00:00+07:00",
+    "environment": "synthetic-demo"
+  },
+  "institutions": [
+    {
+      "id": "INST-DEMO-A",
+      "label": "Demo Institution A"
+    },
+    {
+      "id": "INST-DEMO-B",
+      "label": "Demo Institution B"
+    }
+  ],
+  "policies": [
+    {
+      "id": "POL-SYN-03",
+      "version": 3,
+      "state": "approved"
+    },
+    {
+      "id": "POL-SYN-04",
+      "version": 4,
+      "state": "submitted"
+    },
+    {
+      "id": "POL-SYN-05",
+      "version": 5,
+      "state": "draft"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "TX-SYN-1001",
+      "revision": 2,
+      "institution_id": "INST-DEMO-A",
+      "occurred_at": "2026-10-23T09:00:00+07:00",
+      "amount": "1250000.00",
+      "currency": "SYN",
+      "assessment_id": "ASM-SYN-1001",
+      "observed_at": "2026-10-23T09:00:00+07:00",
+      "recorded_at": "2026-10-23T09:00:00+07:00",
+      "timezone_confidence": "known_for_fixture_only",
+      "lifecycle": "completed",
+      "source_ref": "DEMO-SOURCE-1001",
+      "source": "synthetic_snapshot",
+      "sender_display": "Invented ref A-1001",
+      "receiver_display": "Invented ref B-1001",
+      "account_identity": "unresolved"
+    },
+    {
+      "id": "TX-SYN-1002",
+      "revision": 1,
+      "institution_id": "INST-DEMO-A",
+      "occurred_at": "2026-10-23T10:00:00+07:00",
+      "amount": "40000.00",
+      "currency": "SYN",
+      "assessment_id": "ASM-SYN-1002",
+      "observed_at": "2026-10-23T10:00:00+07:00",
+      "recorded_at": "2026-10-23T10:00:00+07:00",
+      "timezone_confidence": "known_for_fixture_only",
+      "lifecycle": "completed",
+      "source_ref": "DEMO-SOURCE-1002",
+      "source": "synthetic_snapshot",
+      "sender_display": "Invented ref A-1002",
+      "receiver_display": "Invented ref B-1002",
+      "account_identity": "unresolved"
+    },
+    {
+      "id": "TX-SYN-1003",
+      "revision": 1,
+      "institution_id": "INST-DEMO-A",
+      "occurred_at": "2026-10-22T11:00:00+07:00",
+      "amount": "220000.00",
+      "currency": "SYN",
+      "assessment_id": "ASM-SYN-1003",
+      "observed_at": "2026-10-22T11:00:00+07:00",
+      "recorded_at": "2026-10-22T11:00:00+07:00",
+      "timezone_confidence": "known_for_fixture_only",
+      "lifecycle": "completed",
+      "source_ref": "DEMO-SOURCE-1003",
+      "source": "synthetic_snapshot",
+      "sender_display": "Invented ref A-1003",
+      "receiver_display": "Invented ref B-1003",
+      "account_identity": "unresolved"
+    },
+    {
+      "id": "TX-SYN-1004",
+      "revision": 1,
+      "institution_id": "INST-DEMO-B",
+      "occurred_at": "2026-10-22T12:00:00+07:00",
+      "amount": "90000.00",
+      "currency": "SYN",
+      "assessment_id": "ASM-SYN-1004",
+      "observed_at": "2026-10-22T12:00:00+07:00",
+      "recorded_at": "2026-10-22T12:00:00+07:00",
+      "timezone_confidence": "known_for_fixture_only",
+      "lifecycle": "completed",
+      "source_ref": "DEMO-SOURCE-1004",
+      "source": "synthetic_snapshot",
+      "sender_display": "Invented ref A-1004",
+      "receiver_display": "Invented ref B-1004",
+      "account_identity": "unresolved"
+    },
+    {
+      "id": "TX-SYN-1005",
+      "revision": 1,
+      "institution_id": "INST-DEMO-A",
+      "occurred_at": "2026-10-21T13:00:00+07:00",
+      "amount": "120.00",
+      "currency": "USD",
+      "assessment_id": null,
+      "observed_at": "2026-10-21T13:00:00+07:00",
+      "recorded_at": "2026-10-21T13:00:00+07:00",
+      "timezone_confidence": "known_for_fixture_only",
+      "lifecycle": "completed",
+      "source_ref": "DEMO-SOURCE-1005",
+      "source": "synthetic_snapshot",
+      "sender_display": "Invented ref A-1005",
+      "receiver_display": "Invented ref B-1005",
+      "account_identity": "unresolved"
+    },
+    {
+      "id": "TX-SYN-1006",
+      "revision": 1,
+      "institution_id": "INST-DEMO-B",
+      "occurred_at": "2026-10-21T14:00:00+07:00",
+      "amount": "2000.00",
+      "currency": "THB",
+      "assessment_id": null,
+      "observed_at": "2026-10-21T14:00:00+07:00",
+      "recorded_at": "2026-10-21T14:00:00+07:00",
+      "timezone_confidence": "known_for_fixture_only",
+      "lifecycle": "completed",
+      "source_ref": "DEMO-SOURCE-1006",
+      "source": "synthetic_snapshot",
+      "sender_display": "Invented ref A-1006",
+      "receiver_display": "Invented ref B-1006",
+      "account_identity": "unresolved"
+    },
+    {
+      "id": "TX-SYN-1007",
+      "revision": 1,
+      "institution_id": "INST-DEMO-A",
+      "occurred_at": "2026-10-23T11:00:00+07:00",
+      "amount": "40000.00",
+      "currency": "SYN",
+      "assessment_id": "ASM-SYN-1007",
+      "observed_at": "2026-10-23T11:00:00+07:00",
+      "recorded_at": "2026-10-23T11:00:00+07:00",
+      "timezone_confidence": "known_for_fixture_only",
+      "lifecycle": "completed",
+      "source_ref": "DEMO-SOURCE-1007",
+      "source": "synthetic_snapshot",
+      "sender_display": "Invented ref A-1007",
+      "receiver_display": "Invented ref B-1007",
+      "account_identity": "unresolved"
+    }
+  ],
+  "assessments": [
+    {
+      "id": "ASM-SYN-1001",
+      "transaction_id": "TX-SYN-1001",
+      "revision": 2,
+      "institution_id": "INST-DEMO-A",
+      "mode": "synthetic",
+      "policy_id": "POL-SYN-03",
+      "engine_version": "DEMO-ENGINE-01",
+      "catalog_version": "DEMO-CATALOG-01",
+      "input_fingerprint": "DEMO-INPUT-1001",
+      "dimensions": {
+        "fraud": {
+          "index": 0.84,
+          "status": "available",
+          "coverage": {
+            "available": 4,
+            "required": 4
+          }
+        },
+        "mule": {
+          "index": null,
+          "status": "unavailable",
+          "coverage": {
+            "available": 0,
+            "required": 3
+          },
+          "reason": "unresolved_identity"
+        },
+        "aml": {
+          "index": 0.62,
+          "status": "available",
+          "coverage": {
+            "available": 3,
+            "required": 3
+          }
+        }
+      },
+      "reason_codes": [
+        "DEMO_AMOUNT_SIGNAL",
+        "DEMO_IDENTITY_UNRESOLVED"
+      ],
+      "created_at": "2026-10-23T09:00:00+07:00"
+    },
+    {
+      "id": "ASM-SYN-1002",
+      "transaction_id": "TX-SYN-1002",
+      "revision": 1,
+      "institution_id": "INST-DEMO-A",
+      "mode": "synthetic",
+      "policy_id": "POL-SYN-03",
+      "engine_version": "DEMO-ENGINE-01",
+      "catalog_version": "DEMO-CATALOG-01",
+      "input_fingerprint": "DEMO-INPUT-1002",
+      "dimensions": {
+        "fraud": {
+          "index": 0.55,
+          "status": "available",
+          "coverage": {
+            "available": 4,
+            "required": 4
+          }
+        },
+        "mule": {
+          "index": null,
+          "status": "unavailable",
+          "coverage": {
+            "available": 0,
+            "required": 3
+          },
+          "reason": "unresolved_identity"
+        },
+        "aml": {
+          "index": 0.3,
+          "status": "available",
+          "coverage": {
+            "available": 3,
+            "required": 3
+          }
+        }
+      },
+      "reason_codes": [
+        "DEMO_AMOUNT_SIGNAL",
+        "DEMO_IDENTITY_UNRESOLVED"
+      ],
+      "created_at": "2026-10-23T10:00:00+07:00"
+    },
+    {
+      "id": "ASM-SYN-1003",
+      "transaction_id": "TX-SYN-1003",
+      "revision": 1,
+      "institution_id": "INST-DEMO-A",
+      "mode": "synthetic",
+      "policy_id": "POL-SYN-03",
+      "engine_version": "DEMO-ENGINE-01",
+      "catalog_version": "DEMO-CATALOG-01",
+      "input_fingerprint": "DEMO-INPUT-1003",
+      "dimensions": {
+        "fraud": {
+          "index": 0.77,
+          "status": "available",
+          "coverage": {
+            "available": 4,
+            "required": 4
+          }
+        },
+        "mule": {
+          "index": null,
+          "status": "unavailable",
+          "coverage": {
+            "available": 0,
+            "required": 3
+          },
+          "reason": "unresolved_identity"
+        },
+        "aml": {
+          "index": 0.66,
+          "status": "available",
+          "coverage": {
+            "available": 3,
+            "required": 3
+          }
+        }
+      },
+      "reason_codes": [
+        "DEMO_AMOUNT_SIGNAL",
+        "DEMO_IDENTITY_UNRESOLVED"
+      ],
+      "created_at": "2026-10-22T11:00:00+07:00"
+    },
+    {
+      "id": "ASM-SYN-1004",
+      "transaction_id": "TX-SYN-1004",
+      "revision": 1,
+      "institution_id": "INST-DEMO-B",
+      "mode": "synthetic",
+      "policy_id": "POL-SYN-03",
+      "engine_version": "DEMO-ENGINE-01",
+      "catalog_version": "DEMO-CATALOG-01",
+      "input_fingerprint": "DEMO-INPUT-1004",
+      "dimensions": {
+        "fraud": {
+          "index": 0.31,
+          "status": "available",
+          "coverage": {
+            "available": 4,
+            "required": 4
+          }
+        },
+        "mule": {
+          "index": null,
+          "status": "unavailable",
+          "coverage": {
+            "available": 0,
+            "required": 3
+          },
+          "reason": "unresolved_identity"
+        },
+        "aml": {
+          "index": 0.18,
+          "status": "available",
+          "coverage": {
+            "available": 3,
+            "required": 3
+          }
+        }
+      },
+      "reason_codes": [
+        "DEMO_AMOUNT_SIGNAL",
+        "DEMO_IDENTITY_UNRESOLVED"
+      ],
+      "created_at": "2026-10-22T12:00:00+07:00"
+    },
+    {
+      "id": "ASM-SYN-1007",
+      "transaction_id": "TX-SYN-1007",
+      "revision": 1,
+      "institution_id": "INST-DEMO-A",
+      "mode": "synthetic",
+      "policy_id": "POL-SYN-03",
+      "engine_version": "DEMO-ENGINE-01",
+      "catalog_version": "DEMO-CATALOG-01",
+      "input_fingerprint": "DEMO-INPUT-1007",
+      "dimensions": {
+        "fraud": {
+          "index": 0.55,
+          "status": "available",
+          "coverage": {
+            "available": 4,
+            "required": 4
+          }
+        },
+        "mule": {
+          "index": null,
+          "status": "unavailable",
+          "coverage": {
+            "available": 0,
+            "required": 3
+          },
+          "reason": "unresolved_identity"
+        },
+        "aml": {
+          "index": 0.3,
+          "status": "available",
+          "coverage": {
+            "available": 3,
+            "required": 3
+          }
+        }
+      },
+      "reason_codes": [
+        "DEMO_AMOUNT_SIGNAL",
+        "DEMO_IDENTITY_UNRESOLVED"
+      ],
+      "created_at": "2026-10-23T11:00:00+07:00"
+    }
+  ],
+  "alerts": [
+    {
+      "id": "ALT-SYN-1001",
+      "institution_id": "INST-DEMO-A",
+      "assessment_id": "ASM-SYN-1001",
+      "transaction_id": "TX-SYN-1001",
+      "policy_id": "POL-SYN-03",
+      "state": "open",
+      "severity": "high",
+      "dimensions": [
+        "fraud",
+        "aml"
+      ],
+      "case_id": "CASE-SYN-1001",
+      "created_at": "2026-10-23T09:00:00+07:00",
+      "updated_at": "2026-10-23T09:00:00+07:00"
+    },
+    {
+      "id": "ALT-SYN-1002",
+      "institution_id": "INST-DEMO-A",
+      "assessment_id": "ASM-SYN-1002",
+      "transaction_id": "TX-SYN-1002",
+      "policy_id": "POL-SYN-03",
+      "state": "acknowledged",
+      "severity": "medium",
+      "dimensions": [
+        "fraud",
+        "aml"
+      ],
+      "case_id": null,
+      "created_at": "2026-10-23T10:00:00+07:00",
+      "updated_at": "2026-10-23T10:00:00+07:00"
+    },
+    {
+      "id": "ALT-SYN-1003",
+      "institution_id": "INST-DEMO-A",
+      "assessment_id": "ASM-SYN-1003",
+      "transaction_id": "TX-SYN-1003",
+      "policy_id": "POL-SYN-03",
+      "state": "reviewed",
+      "severity": "high",
+      "dimensions": [
+        "fraud",
+        "aml"
+      ],
+      "case_id": "CASE-SYN-1003",
+      "created_at": "2026-10-22T11:00:00+07:00",
+      "updated_at": "2026-10-22T11:00:00+07:00"
+    },
+    {
+      "id": "ALT-SYN-1007",
+      "institution_id": "INST-DEMO-A",
+      "assessment_id": "ASM-SYN-1007",
+      "transaction_id": "TX-SYN-1007",
+      "policy_id": "POL-SYN-03",
+      "state": "open",
+      "severity": "medium",
+      "dimensions": [
+        "fraud",
+        "aml"
+      ],
+      "case_id": null,
+      "created_at": "2026-10-23T11:00:00+07:00",
+      "updated_at": "2026-10-23T11:00:00+07:00"
+    }
+  ],
+  "cases": [
+    {
+      "id": "CASE-SYN-1001",
+      "institution_id": "INST-DEMO-A",
+      "state": "in_review",
+      "updated_at": "2026-10-23T13:00:00+07:00"
+    },
+    {
+      "id": "CASE-SYN-1003",
+      "institution_id": "INST-DEMO-A",
+      "state": "closed",
+      "updated_at": "2026-10-23T13:00:00+07:00"
+    }
+  ]
+}

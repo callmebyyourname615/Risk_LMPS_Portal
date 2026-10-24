@@ -1,0 +1,106 @@
+{
+  "date": "2026-10-23",
+  "status": "pass",
+  "checks": [
+    {
+      "check": "json_parse",
+      "result": "pass",
+      "detail": [
+        "08-source-manifest.json",
+        "01-menu-contract.json",
+        "03-design-tokens.json",
+        "06-prototype-fixtures.json"
+      ]
+    },
+    {
+      "check": "menu_routes",
+      "result": "pass",
+      "detail": {
+        "count": 15,
+        "unique": true,
+        "all_in_master": true
+      }
+    },
+    {
+      "check": "source_integrity",
+      "result": "pass",
+      "detail": {
+        "sources_unchanged": 12,
+        "reference_copy_identical": true
+      }
+    },
+    {
+      "check": "markdown_integrity",
+      "result": "pass",
+      "detail": {
+        "files": 7,
+        "local_links_checked": 40,
+        "line_anchors_checked": 40,
+        "fences_balanced": true
+      }
+    },
+    {
+      "check": "css_handoff_integrity",
+      "result": "pass",
+      "detail": {
+        "balanced_blocks": true,
+        "defined_variables": 78,
+        "unresolved_variable_references": 0,
+        "browser_rendered": false
+      }
+    },
+    {
+      "check": "token_prompt_alignment",
+      "result": "pass",
+      "detail": {
+        "canonical_colors": "JSON/CSS/master match",
+        "sidebar": "264/80",
+        "breakpoints": "1280/1024/768"
+      }
+    },
+    {
+      "check": "contrast_pairings",
+      "result": "pass",
+      "detail": {
+        "ratios": {
+          "text.primary": 16.66,
+          "text.secondary": 9.13,
+          "text.muted": 5.81,
+          "border_strong_vs_panel": 3.88,
+          "border_strong_vs_elevated": 3.58,
+          "border_strong_vs_hover": 3.33,
+          "border_strong_vs_button_endpoint": 3.16
+        },
+        "scope": "opaque hex pairings only; no rendered gradients/alpha validation"
+      }
+    },
+    {
+      "check": "fixture_integrity",
+      "result": "pass",
+      "detail": {
+        "entity_counts": {
+          "transactions": 7,
+          "assessments": 5,
+          "alerts": 4,
+          "cases": 2,
+          "policies": 3,
+          "risk_jobs": 5,
+          "audit_events": 9
+        },
+        "references": "connected",
+        "unique_alert_ownership": true,
+        "case_revisions_match_history": true,
+        "independent_approval": true,
+        "draft_and_unlinked_alerts_present": true,
+        "offline_replay_no_alert_effects": true,
+        "backend_schema_claimed": false
+      }
+    },
+    {
+      "check": "validation_boundary",
+      "result": "pass",
+      "detail": "No backend execution, browser UI validation, Figma generation, deployment, API calls or real data processing performed."
+    }
+  ],
+  "ui_acceptance": "not_run_pending_Figma_Make_build"
+}

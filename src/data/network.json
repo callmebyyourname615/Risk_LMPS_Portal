@@ -1,0 +1,22 @@
+{
+  "provenance": "Invented node bindings for the synthetic UI only; not inferred from account display strings.",
+  "identity_verified": false,
+  "nodes": [
+    { "id": "NODE-DEMO-01", "label": "Origin reference", "institution_id": "INST-DEMO-A", "x": 155, "y": 260 },
+    { "id": "NODE-DEMO-02", "label": "Transit reference", "institution_id": "INST-DEMO-A", "x": 455, "y": 260 },
+    { "id": "NODE-DEMO-03", "label": "Receiving reference", "institution_id": "INST-DEMO-A", "x": 790, "y": 130 },
+    { "id": "NODE-DEMO-04", "label": "Branch reference", "institution_id": "INST-DEMO-A", "x": 790, "y": 415 },
+    { "id": "NODE-DEMO-05", "label": "Separate-currency reference", "institution_id": "INST-DEMO-A", "x": 165, "y": 490 },
+    { "id": "NODE-DEMO-B1", "label": "Demo B origin", "institution_id": "INST-DEMO-B", "x": 210, "y": 220 },
+    { "id": "NODE-DEMO-B2", "label": "Demo B recipient", "institution_id": "INST-DEMO-B", "x": 740, "y": 340 }
+  ],
+  "edges": [
+    { "transaction_id": "TX-SYN-1001", "source": "NODE-DEMO-01", "target": "NODE-DEMO-02", "bend": 0 },
+    { "transaction_id": "TX-SYN-1002", "source": "NODE-DEMO-02", "target": "NODE-DEMO-03", "bend": 0 },
+    { "transaction_id": "TX-SYN-1003", "source": "NODE-DEMO-04", "target": "NODE-DEMO-01", "bend": -180 },
+    { "transaction_id": "TX-SYN-1007", "source": "NODE-DEMO-02", "target": "NODE-DEMO-04", "bend": 0 },
+    { "transaction_id": "TX-SYN-1005", "source": "NODE-DEMO-01", "target": "NODE-DEMO-05", "bend": 28 },
+    { "transaction_id": "TX-SYN-1004", "source": "NODE-DEMO-B1", "target": "NODE-DEMO-B2", "bend": 55 },
+    { "transaction_id": "TX-SYN-1006", "source": "NODE-DEMO-B2", "target": "NODE-DEMO-B1", "bend": 55 }
+  ]
+}

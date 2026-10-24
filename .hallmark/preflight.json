@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-23",
+  "scope": [
+    "/transactions",
+    "/assessments",
+    "corresponding detail routes",
+    "/network summary cards",
+    "/cases",
+    "/cases/:id",
+    "global fields (Alerts treatment)"
+  ],
+  "font": {
+    "source": "src/index.css:1,44-45",
+    "display_body": "IBM Plex Sans / Noto Sans Lao",
+    "ids": "existing mono stack"
+  },
+  "palette": {
+    "source": "src/index.css:5-27",
+    "status": "user-locked existing LMPS navy/amber; no catalog rotation"
+  },
+  "spacing": {
+    "source": "src/index.css:28-41",
+    "scale": "4px",
+    "panel_radius": 12,
+    "control_radius": 8
+  },
+  "motion": {
+    "source": "package.json:12-14",
+    "library": "gsap 3.15.0 + @gsap/react 2.1.2",
+    "new_dependencies": false
+  },
+  "framework": "React19 + Vite8 + Tailwind4",
+  "preserve": [
+    "palette",
+    "fonts",
+    "tokens",
+    "routes",
+    "navigation",
+    "fixtures",
+    "business workflows"
+  ],
+  "browser_verification": "not run — user handles browser monitoring; no Playwright"
+}
